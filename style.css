@@ -3,7 +3,7 @@ html, body {
 }
 
 body {
-    background-image: url('background.jpg');
+    background-image: url('geo.jpg');
     background-size: cover;
     background-repeat: repeat;
     background-attachment: fixed;
@@ -19,7 +19,6 @@ h2 {
 
 .sidenav-trigger {
     color: navy;
-    opacity: 0.5
 }
 
 .thin-font {
@@ -27,8 +26,15 @@ h2 {
     line-height: 2
 }
 
-.button-subfont {
-    color: black
+
+
+.pageHeaderText {
+    padding: 10px 50px 50px 50px;
+    background-color: white
+}
+
+main {
+    padding-top: 20px
 }
 
 #introductionPhoto {
@@ -40,14 +46,13 @@ h2 {
 }
 
 #introductionText {
-    height: auto;
+    height: 100%;
     padding: 50px;
     background-color: white;
-    overflow: visible
+    overflow: scroll
 }
-
 /* Desktop screens */
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 880px) {
     #introductionPhoto {
         background-size: 50%;
     }
@@ -56,3 +61,4 @@ h2 {
         overflow: scroll
     }
 }
+
