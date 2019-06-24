@@ -7,7 +7,6 @@ body {
     background-size: cover;
     background-repeat: repeat;
     background-attachment: fixed;
-    margin-bottom: 25px
 }
 
 h3 {
@@ -29,7 +28,8 @@ h3 {
 }
 
 main {
-    padding-top: 20px
+    padding-top: 20px;
+    padding-bottom: 25px
 }
 
 #introductionPhoto, #photoBG {
