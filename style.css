@@ -10,21 +10,19 @@ body {
 }
 
 h3 {
-    color: rgb(40, 47, 70);
+    color: rgb(40, 68, 110);
 }
 
 
 
 .sidenav-trigger {
-    color: rgb(40, 47, 70);;
+    color: rgb(0, 172, 156);;
 }
 
 .thin-font {
     font-weight: 200;
     line-height: 2
 }
-
-
 
 .pageHeaderText {
     padding: 10px 50px 50px 50px;
@@ -51,9 +49,18 @@ main {
 }
 
 .pageHeaderText {
-    background-color: rgb(40, 47, 70);
+    background-color: rgb(40, 68, 110);
     color: white
 }
+
+.card-title {
+    color: rgb(255, 0, 142)
+}
+
+#applicationsPage a {
+    color: rgb(255, 0, 142)
+}
+
 /* Desktop screens */
 @media only screen and (min-width: 880px) {
     #introductionPhoto {
