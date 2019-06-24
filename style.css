@@ -10,15 +10,13 @@ body {
 }
 
 h3 {
-    color: navy
+    color: rgb(40, 47, 70);
 }
 
-h2 {
-    color: navy
-}
+
 
 .sidenav-trigger {
-    color: navy;
+    color: rgb(40, 47, 70);;
 }
 
 .thin-font {
@@ -50,6 +48,11 @@ main {
     padding: 50px;
     background-color: white;
     overflow: scroll
+}
+
+.pageHeaderText {
+    background-color: rgb(40, 47, 70);
+    color: white
 }
 /* Desktop screens */
 @media only screen and (min-width: 880px) {
