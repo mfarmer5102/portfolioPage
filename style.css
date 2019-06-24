@@ -34,8 +34,8 @@ h2 {
 #introductionPhoto {
     height: 100%;
     background-image: url('hallway.jpg');
-    background-size: 50%;
-    background-repeat: repeat;
+    background-size: cover;
+    background-repeat: none;
     background-attachment: fixed;
 }
 
@@ -46,15 +46,9 @@ h2 {
     overflow: scroll
 }
 
-/* Small screens */
-@media only screen and (max-width: 880px) {
+/* Desktop screens */
+@media only screen and (min-width: 800px) {
     #introductionPhoto {
-        background-size: 70%;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    #introductionPhoto {
-        background-size: 100%;
+        background-size: 50%;
     }
 }
