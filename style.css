@@ -66,6 +66,15 @@ main {
     color: rgb(255, 0, 142)
 }
 
+#connectContainer i {
+    margin-top: 15px;
+    color: rgb(31, 31, 31)
+}
+
+#connectContainer .card-content {
+    text-align: center;
+}
+
 @media only screen and (min-width: 1000px) {
     #introductionText {
         padding: 50px;

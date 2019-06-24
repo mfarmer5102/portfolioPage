@@ -13,6 +13,8 @@
 
     <!-- Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -56,34 +58,47 @@
         </p>
     </div>
 
-    <main class='container thin-font'>
+    <main id='connectContainer' class='container thin-font'>
 
         <div class='row'>
             <!--Start Card-->
             <div class='col s12 m4'>
-                <div class="card">
-                    <div class="card-content row">
-                        <span class="card-title" style='text-align: center'>GitHub</span>
+                <a href='https://github.com/cafeamericano'>
+                    <div class="card">
+                        <div class="card-content row">
+                            <span class="card-title" style='text-align: center'>GitHub</span>
+                            <i class="fab fa-github fa-5x"></i>
+                        </div>
                     </div>
-                </div>
+                </a>
+            </div>
+            <!--End Card-->
+
+            <!--Start Card-->
+            <div class='col s12 m4'>
+                <a href='https://www.linkedin.com/in/matthew-farmer-204930182'>
+                    <div class="card">
+                        <div class="card-content row">
+                            <span class="card-title" style='text-align: center'>LinkedIn</span>
+                            <i class="fab fa-linkedin fa-5x"></i>
+                        </div>
+                    </div>
+                </a>
             </div>
             <!--End Card-->
 
             <!--Start Card-->
             <div class='col s12 m4'>
                 <div class="card">
-                    <div class="card-content row">
-                        <span class="card-title" style='text-align: center'>LinkedIn</span>
-                    </div>
-                </div>
-            </div>
-            <!--End Card-->
-
-            <!--Start Card-->
-            <div class='col s12 m4'>
-                <div class="card">
-                    <div class="card-content row">
+                    <div class="card-content activator">
                         <span class="card-title" style='text-align: center'>Email</span>
+                        <i class="fas fa-envelope fa-5x"></i>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4"><i
+                                class="material-icons right">close</i></span>
+                        <p>Reach me at:</p>
+                        <strong>mfarmer5102@gmail.com</strong>
                     </div>
                 </div>
             </div>
