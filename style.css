@@ -1,3 +1,7 @@
+html, body {
+    height: 100%
+}
+
 body {
     background-image: url('background.jpg');
     background-size: cover;
@@ -6,7 +10,6 @@ body {
 }
 
 h3 {
-    font-weight: 600;
     color: navy
 }
 
@@ -26,4 +29,32 @@ h2 {
 
 .button-subfont {
     color: black
+}
+
+#introductionPhoto {
+    height: 100%;
+    background-image: url('bulb.jpg');
+    background-size: 50%;
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+#introductionText {
+    padding: 50px;
+    height: 100%;
+    background-color: white;
+    overflow: scroll
+}
+
+/* Small screens */
+@media only screen and (max-width: 880px) {
+    #introductionPhoto {
+        background-size: 70%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #introductionPhoto {
+        background-size: 100%;
+    }
 }
