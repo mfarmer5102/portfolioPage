@@ -40,15 +40,19 @@ h2 {
 }
 
 #introductionText {
+    height: auto;
     padding: 50px;
-    height: 100%;
     background-color: white;
-    overflow: scroll
+    overflow: visible
 }
 
 /* Desktop screens */
 @media only screen and (min-width: 800px) {
     #introductionPhoto {
         background-size: 50%;
+    }
+    #introductionText {
+        height: 100%;
+        overflow: scroll
     }
 }
