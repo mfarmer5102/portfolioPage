@@ -17,6 +17,9 @@ var database = firebase.database();
 let accrEntryPointButton = 0;
 let accrDivStudyHelper = 0;
 let accrDivDashboard = 0;
+let accrApplicationsSideNavLink = 0;
+let accrSideNavTriggerButton = 0;
+let accrMinorProjectsContainer = 0;
 
 ///////////// INITIAL AND CONTINUOUS DB SYNCING //////////////////////////////
 
@@ -41,6 +44,21 @@ database.ref().on("value", function (snapshot) {
             accrDivDashboard = snapshot.val().logs.divDashboard.total
         } else {
             accrDivDashboard = 0;
+        }
+        if (snapshot.val().logs.applicationsSideNavLink !== undefined) {
+            accrApplicationsSideNavLink = snapshot.val().logs.applicationsSideNavLink.total
+        } else {
+            accrApplicationsSideNavLink = 0;
+        }
+        if (snapshot.val().logs.sideNavTriggerButton !== undefined) {
+            accrSideNavTriggerButton = snapshot.val().logs.sideNavTriggerButton.total
+        } else {
+            accrSideNavTriggerButton = 0;
+        }
+        if (snapshot.val().logs.minorProjectsContainer !== undefined) {
+            accrMinorProjectsContainer = snapshot.val().logs.minorProjectsContainer.total
+        } else {
+            accrMinorProjectsContainer = 0;
         }
     }
 }, function (errorObject) {
@@ -76,3 +94,38 @@ $(document).on("click", "#divDashboard", function () {
     });
 });
 
+$(document).on("click", "#applicationsSideNavLink", function () {
+    let accumulator = `logs/applicationsSideNavLink/total`
+    let clickRecord = `logs/applicationsSideNavLink/${accrApplicationsSideNavLink + 1}/timeStamp`
+    database.ref('/').update({
+        [accumulator]: accrApplicationsSideNavLink + 1,
+        [clickRecord]: firebase.database.ServerValue.TIMESTAMP
+    });
+});
+
+$(document).on("click", "#sideNavTriggerButton", function () {
+    let accumulator = `logs/sideNavTriggerButton/total`
+    let clickRecord = `logs/sideNavTriggerButton/${accrSideNavTriggerButton + 1}/timeStamp`
+    database.ref('/').update({
+        [accumulator]: accrSideNavTriggerButton + 1,
+        [clickRecord]: firebase.database.ServerValue.TIMESTAMP
+    });
+});
+
+$(document).on("click", "#sideNavTriggerButton", function () {
+    let accumulator = `logs/sideNavTriggerButton/total`
+    let clickRecord = `logs/sideNavTriggerButton/${accrSideNavTriggerButton + 1}/timeStamp`
+    database.ref('/').update({
+        [accumulator]: accrSideNavTriggerButton + 1,
+        [clickRecord]: firebase.database.ServerValue.TIMESTAMP
+    });
+});
+
+$(document).on("click", "#minorProjectsContainer", function () {
+    let accumulator = `logs/minorProjectsContainer/total`
+    let clickRecord = `logs/minorProjectsContainer/${accrMinorProjectsContainer + 1}/timeStamp`
+    database.ref('/').update({
+        [accumulator]: accrMinorProjectsContainer + 1,
+        [clickRecord]: firebase.database.ServerValue.TIMESTAMP
+    });
+});
