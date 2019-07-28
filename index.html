@@ -20,6 +20,15 @@
     <!-- Custom CSS-->
     <link href='style.css' rel='stylesheet' type="text/css">
 
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Firebase Core JavaScript Link -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+
+    <!-- Specific Firebase products we want (Database) -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
 </head>
 
 <body>
@@ -47,7 +56,7 @@
                     enjoy teaching others and sharing my knowledge for the benefit of the team.
                 </p>
                 <br>
-                <div style="text-align: right">
+                <div id='entryPointButton' style="text-align: right">
                     <a href="skills.html" class="btn-floating btn-large pulse button-subfont"><i
                             class="material-icons">arrow_forward</i></a>
                 </div>
@@ -59,6 +68,10 @@
     <script>
         M.AutoInit();
     </script>
+
+    <!-- Traffic Monitor -->
+    <script src='trafficMonitor.js'></script>
+
 </body>
 
 </html>
