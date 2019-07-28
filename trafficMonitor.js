@@ -14,18 +14,17 @@ var database = firebase.database();
 
 ///////////// VARIABLE INITIALIZATION //////////////////////////////
 
-let currentEntriesCount = 0;
+let accrEntryPointButton = 0;
 
 ///////////// INITIAL AND CONTINUOUS DB SYNCING //////////////////////////////
 
 database.ref().on("value", function (snapshot) {
     console.log(snapshot.val());
-    if (snapshot.val() === null || snapshot.val().cumulativeClicks === undefined ) {
-        currentEntriesCount = 0;
+    if (snapshot.val() === null ) {
+        accrEntryPointButton = 0;
     } else {
-        currentEntriesCount = snapshot.val().cumulativeClicks
+        accrEntryPointButton = snapshot.val().logs.entryPointButton.total
     }
-    console.log(currentEntriesCount)
 }, function (errorObject) {
     console.log("The read failed: " + errorObject.code);
 });
@@ -33,10 +32,11 @@ database.ref().on("value", function (snapshot) {
 ///////////// CLICK TRACKING//////////////////////////////
 
 $(document).on("click", "#entryPointButton", function () {
-    let url = `entries/${currentEntriesCount + 1}/timeStamp`
+    let accumulator = `logs/entryPointButton/total`
+    let clickRecord = `logs/entryPointButton/${accrEntryPointButton + 1}/timeStamp`
     database.ref('/').update({
-        cumulativeClicks: currentEntriesCount + 1,
-        [url]: firebase.database.ServerValue.TIMESTAMP
+        [accumulator]: accrEntryPointButton + 1,
+        [clickRecord]: firebase.database.ServerValue.TIMESTAMP
     });
 });
 
