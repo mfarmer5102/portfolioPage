@@ -29,6 +29,9 @@ database.ref().on("value", function (snapshot) {
         accrEntryPointButton = 0;
         accrDivStudyHelper = 0;
         accrDivDashboard = 0;
+        accrApplicationsSideNavLink = 0;
+        accrSideNavTriggerButton = 0;
+        accrMinorProjectsContainer = 0;
     } else {
         if (snapshot.val().logs.entryPointButton !== undefined) {
             accrEntryPointButton = snapshot.val().logs.entryPointButton.total
@@ -99,15 +102,6 @@ $(document).on("click", "#applicationsSideNavLink", function () {
     let clickRecord = `logs/applicationsSideNavLink/${accrApplicationsSideNavLink + 1}/timeStamp`
     database.ref('/').update({
         [accumulator]: accrApplicationsSideNavLink + 1,
-        [clickRecord]: firebase.database.ServerValue.TIMESTAMP
-    });
-});
-
-$(document).on("click", "#sideNavTriggerButton", function () {
-    let accumulator = `logs/sideNavTriggerButton/total`
-    let clickRecord = `logs/sideNavTriggerButton/${accrSideNavTriggerButton + 1}/timeStamp`
-    database.ref('/').update({
-        [accumulator]: accrSideNavTriggerButton + 1,
         [clickRecord]: firebase.database.ServerValue.TIMESTAMP
     });
 });
