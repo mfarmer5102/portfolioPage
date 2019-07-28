@@ -3,7 +3,7 @@ html, body {
 }
 
 body {
-    background-image: url('geo.jpg');
+    background-image: url('../siteImages/geo.jpg');
     background-size: cover;
     background-repeat: repeat;
     background-attachment: fixed;
@@ -33,7 +33,7 @@ main {
 }
 
 #introductionPhoto, #photoBG {
-    background-image: url('hallway.jpg');
+    background-image: url('../siteImages/hallway.jpg');
     background-size: cover;
     background-repeat: none;
     background-attachment: fixed;
