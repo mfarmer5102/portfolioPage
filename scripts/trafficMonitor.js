@@ -123,3 +123,20 @@ $(document).on("click", "#minorProjectsContainer", function () {
         [clickRecord]: firebase.database.ServerValue.TIMESTAMP
     });
 });
+
+///////////// COOKIES //////////////////////////////
+
+function cookieManager() {
+    let now = moment().format('MMMM Do YYYY, h:mm:ss a')
+    var visitor = document.cookie;
+    if (user != "") {
+        console.log(visitor)
+    } else {
+        document.cookie = `visitor=${now}`;
+    }
+}
+
+///////////// RUN PROGRAM //////////////////////////////
+
+cookieManager()
+console.log(document.cookie)
