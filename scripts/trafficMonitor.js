@@ -22,7 +22,7 @@ function setKey() {
         let firstArrivalPath = `activity/${localStorage.getItem('visitorID')}/firstArrival`
         database.ref('/').update({
             [namePath]: currentKey,
-            [firstArrivalPath]: moment().format('YYYY-MM-DD hh:mm:ss')
+            [firstArrivalPath]: moment().format('YYYY-MM-DD HH:mm:ss')
         });
     }
 }
@@ -33,7 +33,7 @@ setKey()
 
 function logUserActivity(elementID) {
     if (elementID !== undefined) {
-        let clickRecord = `activity/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/${moment().format('h:mm:ss')}`
+        let clickRecord = `activity/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/${moment().format('HH:mm:ss')}`
         database.ref('/').update({
             [clickRecord]: elementID
         });
