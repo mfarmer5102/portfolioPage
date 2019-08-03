@@ -139,9 +139,8 @@ function parseCookie(cookieString) {
 }
 function cookieManager() {
     let now = moment().format('YYYY-MM-DD_h:mm:ss_A')
-    alert(now)
-    var visitor = document.cookie;
-    if (visitor != "") {
+    var visitor = parseCookie(document.cookie);
+    if (visitor != "" || visitor != null || visitor != undefined) {
         console.log(visitor)
     } else {
         document.cookie = `visitor=${now}`;
