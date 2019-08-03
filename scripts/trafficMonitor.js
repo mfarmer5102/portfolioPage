@@ -22,7 +22,7 @@ function setKey() {
         let namePath = `activity/${assignedKey}` 
         let firstArrivalPath = `activity/${assignedKey}/firstArrival`
         database.ref('/').update({
-            [namePath]: currentKey,
+            [namePath]: assignedKey,
             [firstArrivalPath]: moment().format('YYYY-MM-DD HH:mm:ss')
         });
     }
