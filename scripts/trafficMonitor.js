@@ -1,9 +1,9 @@
-///////////// SET SESSION STORAGE //////////////////////////////
+///////////// SET LOCAL STORAGE //////////////////////////////
 
 function setKey() {
-    let currentKey = sessionStorage.getItem('visitorID')
+    let currentKey = localStorage.getItem('visitorID')
     if (currentKey !== null && currentKey !== undefined || currentKey !== '') {
-        sessionStorage.setItem('visitorID', `${moment().format('YYYY-MM-DD_h:mm:ss_A')}`)
+        localStorage.setItem('visitorID', `id${moment().unix()}`)
     }
 }
 
@@ -82,42 +82,42 @@ database.ref().on("value", function (snapshot) {
 ///////////// CLICK TRACKING//////////////////////////////
 
 $(document).on("click", "#entryPointButton", function () {
-    let clickRecord = `logs/entryPointButton/${sessionStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD h:mm:ss A')}`
+    let clickRecord = `logs/${localStorage.getItem('visitorID')}/entryPointButton/${moment().format('YYYY-MM-DD h:mm:ss A')}`
     database.ref('/').update({
         [clickRecord]: moment().format('YYYY-MM-DD_h:mm:ss_A')
     });
 });
 
 $(document).on("click", "#divStudyHelper", function () {
-    let clickRecord = `logs/divStudyHelper/${sessionStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD h:mm:ss A')}`
+    let clickRecord = `logs/${localStorage.getItem('visitorID')}/divStudyHelper/${moment().format('YYYY-MM-DD h:mm:ss A')}`
     database.ref('/').update({
         [clickRecord]: moment().format('YYYY-MM-DD_h:mm:ss_A')
     });
 });
 
 $(document).on("click", "#divDashboard", function () {
-    let clickRecord = `logs/divDashboard/${sessionStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD h:mm:ss A')}`
+    let clickRecord = `logs/${localStorage.getItem('visitorID')}/divDashboard/${moment().format('YYYY-MM-DD h:mm:ss A')}`
     database.ref('/').update({
         [clickRecord]: moment().format('YYYY-MM-DD_h:mm:ss_A')
     });
 });
 
 $(document).on("click", "#applicationsSideNavLink", function () {
-    let clickRecord = `logs/applicationsSideNavLink/${sessionStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD h:mm:ss A')}`
+    let clickRecord = `logs/${localStorage.getItem('visitorID')}/applicationsSideNavLink/${moment().format('YYYY-MM-DD h:mm:ss A')}`
     database.ref('/').update({
         [clickRecord]: moment().format('YYYY-MM-DD_h:mm:ss_A')
     });
 });
 
 $(document).on("click", "#sideNavTriggerButton", function () {
-    let clickRecord = `logs/sideNavTriggerButton/${sessionStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD h:mm:ss A')}`
+    let clickRecord = `logs/${localStorage.getItem('visitorID')}/sideNavTriggerButton/${moment().format('YYYY-MM-DD h:mm:ss A')}`
     database.ref('/').update({
         [clickRecord]: moment().format('YYYY-MM-DD_h:mm:ss_A')
     });
 });
 
 $(document).on("click", "#minorProjectsContainer", function () {
-    let clickRecord = `logs/minorProjectsContainer/${sessionStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD h:mm:ss A')}`
+    let clickRecord = `logs/${localStorage.getItem('visitorID')}/minorProjectsContainer/${moment().format('YYYY-MM-DD h:mm:ss A')}`
     database.ref('/').update({
         [clickRecord]: moment().format('YYYY-MM-DD h:mm:ss A')
     });
