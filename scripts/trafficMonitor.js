@@ -1,3 +1,7 @@
+///////////// RUN PROGRAM //////////////////////////////
+
+cookieManager()
+
 ///////////// VARIABLE INITIALIZATION //////////////////////////////
 
 let accrEntryPointButton = 0;
@@ -139,6 +143,4 @@ $(document).on("click", "#minorProjectsContainer", function () {
     });
 });
 
-///////////// RUN PROGRAM //////////////////////////////
 
-cookieManager()
