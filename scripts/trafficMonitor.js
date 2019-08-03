@@ -17,9 +17,10 @@ var database = firebase.database();
 function setKey() {
     let currentKey = localStorage.getItem('visitorID')
     if (currentKey === null || currentKey === undefined || currentKey === '') {
-        localStorage.setItem('visitorID', `visitor${moment().unix()}`)
-        let namePath = `activity/${localStorage.getItem('visitorID')}`
-        let firstArrivalPath = `activity/${localStorage.getItem('visitorID')}/firstArrival`
+        let assignedKey = `visitor${moment().unix()}` // ie visitorID
+        localStorage.setItem('visitorID', assignedKey)
+        let namePath = `activity/${assignedKey}` 
+        let firstArrivalPath = `activity/${assignedKey}/firstArrival`
         database.ref('/').update({
             [namePath]: currentKey,
             [firstArrivalPath]: moment().format('YYYY-MM-DD HH:mm:ss')
