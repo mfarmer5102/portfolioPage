@@ -3,7 +3,7 @@
 function setKey() {
     let currentKey = localStorage.getItem('visitorID')
     if (currentKey === null || currentKey === undefined || currentKey === '') {
-        localStorage.setItem('visitorID', `id${moment().unix()}`)
+        localStorage.setItem('visitorID', `visitor${moment().unix()}`)
     }
 }
 
