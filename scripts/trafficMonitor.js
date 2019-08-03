@@ -129,7 +129,7 @@ $(document).on("click", "#minorProjectsContainer", function () {
 function cookieManager() {
     let now = moment().format('MMMM Do YYYY, h:mm:ss a')
     var visitor = document.cookie;
-    if (user != "") {
+    if (visitor != "") {
         console.log(visitor)
     } else {
         document.cookie = `visitor=${now}`;
