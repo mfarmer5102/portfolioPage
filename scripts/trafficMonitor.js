@@ -48,3 +48,4 @@ $(document).ready(function () {
     $("div").click(function () {
         logUserActivity($(this).attr('data-seed'))
     });
+})
