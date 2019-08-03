@@ -1,14 +1,3 @@
-///////////// SET LOCAL STORAGE //////////////////////////////
-
-function setKey() {
-    let currentKey = localStorage.getItem('visitorID')
-    if (currentKey === null || currentKey === undefined || currentKey === '') {
-        localStorage.setItem('visitorID', `visitor${moment().unix()}`)
-    }
-}
-
-setKey()
-
 ///////////// DATABASE SETUP//////////////////////////////
 
 var firebaseConfig = {
@@ -23,6 +12,21 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
 
+///////////// SET LOCAL STORAGE //////////////////////////////
+
+function setKey() {
+    let currentKey = localStorage.getItem('visitorID')
+    if (currentKey === null || currentKey === undefined || currentKey === '') {
+        localStorage.setItem('visitorID', `visitor${moment().unix()}`)
+        let path = `activity/${localStorage.getItem('visitorID')}/firstArrival`
+        database.ref('/').update({
+            [path]: moment().format('YYYY-MM-DD h:mm:ss A')
+        });
+    }
+}
+
+setKey()
+
 ///////////// CAPTURE CLICK EVENTS AND LOG TO DATABASE //////////////////////////////
 
 function logUserActivity(elementID) {
@@ -34,14 +38,14 @@ function logUserActivity(elementID) {
     }
 }
 
-$(document).ready(function(){
-    $("a").click(function(){
+$(document).ready(function () {
+    $("a").click(function () {
         logUserActivity($(this).attr('data-seed'))
     });
-    $("button").click(function(){
+    $("button").click(function () {
         logUserActivity($(this).attr('data-seed'))
     });
-    $("div").click(function(){
+    $("div").click(function () {
         logUserActivity($(this).attr('data-seed'))
     });
-  });
+});
