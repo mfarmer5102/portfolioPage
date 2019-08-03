@@ -126,8 +126,20 @@ $(document).on("click", "#minorProjectsContainer", function () {
 
 ///////////// COOKIES //////////////////////////////
 
+function parseCookie(cookieString) {
+    console.log(cookieString)
+    let cookieValue = []
+    let equalsIndex = cookieString.indexOf('=')
+    for (i = 0; i < cookieString.length; i++) {
+        if (i > equalsIndex) {
+            cookieValue.push(cookieString[i])
+        }
+    }
+    return cookieValue.toString()
+}
 function cookieManager() {
-    let now = moment().format('MMMM Do YYYY, h:mm:ss a')
+    let now = moment().format('YYYY-MM-DD_h:mm:ss_A')
+    alert(now)
     var visitor = document.cookie;
     if (visitor != "") {
         console.log(visitor)
@@ -139,4 +151,4 @@ function cookieManager() {
 ///////////// RUN PROGRAM //////////////////////////////
 
 cookieManager()
-console.log(document.cookie)
+console.log(parseCookie(document.cookie))
