@@ -1,3 +1,14 @@
+///////////// SET SESSION STORAGE //////////////////////////////
+
+function setKey() {
+    let currentKey = sessionStorage.getItem('visitorID')
+    if (currentKey !== null && currentKey !== undefined || currentKey !== '') {
+        sessionStorage.setItem('visitorID', `${moment().format('YYYY-MM-DD_h:mm:ss_A')}`)
+    }
+}
+
+setKey()
+
 ///////////// VARIABLE INITIALIZATION //////////////////////////////
 
 let accrEntryPointButton = 0;
@@ -6,35 +17,6 @@ let accrDivDashboard = 0;
 let accrApplicationsSideNavLink = 0;
 let accrSideNavTriggerButton = 0;
 let accrMinorProjectsContainer = 0;
-
-let cookiedUser = ''
-
-///////////// COOKIES //////////////////////////////
-
-function parseCookie(cookieString) {
-    console.log(cookieString)
-    let cookieValue = []
-    let equalsIndex = cookieString.indexOf('=')
-    for (i = 0; i < cookieString.length; i++) {
-        if (i > equalsIndex) {
-            cookieValue.push(cookieString[i])
-        }
-    }
-    return cookieValue.join("")
-}
-
-function cookieManager() {
-    let now = 'id' + moment().format('YYYY-MM-DD_h:mm:ss_A')
-    var visitor = parseCookie(document.cookie);
-    if (visitor != "" || visitor != null || visitor != undefined) {
-        cookiedUser = visitor
-    } else {
-        document.cookie = `visitor=${now}`;
-        cookieManager(document.cookie)
-    }
-}
-
-cookieManager()
 
 ///////////// DATABASE SETUP//////////////////////////////
 
@@ -100,42 +82,42 @@ database.ref().on("value", function (snapshot) {
 ///////////// CLICK TRACKING//////////////////////////////
 
 $(document).on("click", "#entryPointButton", function () {
-    let clickRecord = `logs/entryPointButton/${cookieManager(document.cookie)}/${moment().format('YYYY-MM-DD h:mm:ss A')}`
+    let clickRecord = `logs/entryPointButton/${sessionStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD h:mm:ss A')}`
     database.ref('/').update({
         [clickRecord]: moment().format('YYYY-MM-DD_h:mm:ss_A')
     });
 });
 
 $(document).on("click", "#divStudyHelper", function () {
-    let clickRecord = `logs/divStudyHelper/${cookieManager(document.cookie)}/${moment().format('YYYY-MM-DD h:mm:ss A')}`
+    let clickRecord = `logs/divStudyHelper/${sessionStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD h:mm:ss A')}`
     database.ref('/').update({
         [clickRecord]: moment().format('YYYY-MM-DD_h:mm:ss_A')
     });
 });
 
 $(document).on("click", "#divDashboard", function () {
-    let clickRecord = `logs/divDashboard/${cookieManager(document.cookie)}/${moment().format('YYYY-MM-DD h:mm:ss A')}`
+    let clickRecord = `logs/divDashboard/${sessionStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD h:mm:ss A')}`
     database.ref('/').update({
         [clickRecord]: moment().format('YYYY-MM-DD_h:mm:ss_A')
     });
 });
 
 $(document).on("click", "#applicationsSideNavLink", function () {
-    let clickRecord = `logs/applicationsSideNavLink/${cookieManager(document.cookie)}/${moment().format('YYYY-MM-DD h:mm:ss A')}`
+    let clickRecord = `logs/applicationsSideNavLink/${sessionStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD h:mm:ss A')}`
     database.ref('/').update({
         [clickRecord]: moment().format('YYYY-MM-DD_h:mm:ss_A')
     });
 });
 
 $(document).on("click", "#sideNavTriggerButton", function () {
-    let clickRecord = `logs/sideNavTriggerButton/${cookieManager(document.cookie)}/${moment().format('YYYY-MM-DD h:mm:ss A')}`
+    let clickRecord = `logs/sideNavTriggerButton/${sessionStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD h:mm:ss A')}`
     database.ref('/').update({
         [clickRecord]: moment().format('YYYY-MM-DD_h:mm:ss_A')
     });
 });
 
 $(document).on("click", "#minorProjectsContainer", function () {
-    let clickRecord = `logs/minorProjectsContainer/${cookieManager(document.cookie)}/${moment().format('YYYY-MM-DD h:mm:ss A')}`
+    let clickRecord = `logs/minorProjectsContainer/${sessionStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD h:mm:ss A')}`
     database.ref('/').update({
         [clickRecord]: moment().format('YYYY-MM-DD h:mm:ss A')
     });
