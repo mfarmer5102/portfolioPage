@@ -18,9 +18,11 @@ function setKey() {
     let currentKey = localStorage.getItem('visitorID')
     if (currentKey === null || currentKey === undefined || currentKey === '') {
         localStorage.setItem('visitorID', `visitor${moment().unix()}`)
-        let path = `activity/${localStorage.getItem('visitorID')}/firstArrival`
+        let namePath = `activity/${localStorage.getItem('visitorID')}`
+        let firstArrivalPath = `activity/${localStorage.getItem('visitorID')}/firstArrival`
         database.ref('/').update({
-            [path]: moment().format('YYYY-MM-DD h:mm:ss A')
+            [namePath]: currentKey,
+            [firstArrivalPath]: moment().format('YYYY-MM-DD hh:mm:ss')
         });
     }
 }
@@ -31,7 +33,7 @@ setKey()
 
 function logUserActivity(elementID) {
     if (elementID !== undefined) {
-        let clickRecord = `activity/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/${moment().format('h:mm:ss A')}`
+        let clickRecord = `activity/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/${moment().format('h:mm:ss')}`
         database.ref('/').update({
             [clickRecord]: elementID
         });
