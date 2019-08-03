@@ -1,3 +1,39 @@
+///////////// VARIABLE INITIALIZATION //////////////////////////////
+
+let accrEntryPointButton = 0;
+let accrDivStudyHelper = 0;
+let accrDivDashboard = 0;
+let accrApplicationsSideNavLink = 0;
+let accrSideNavTriggerButton = 0;
+let accrMinorProjectsContainer = 0;
+
+let cookiedUser = ''
+
+///////////// COOKIES //////////////////////////////
+
+function parseCookie(cookieString) {
+    console.log(cookieString)
+    let cookieValue = []
+    let equalsIndex = cookieString.indexOf('=')
+    for (i = 0; i < cookieString.length; i++) {
+        if (i > equalsIndex) {
+            cookieValue.push(cookieString[i])
+        }
+    }
+    return cookieValue.join("")
+}
+
+function cookieManager() {
+    let now = 'id' + moment().format('YYYY-MM-DD_h:mm:ss_A')
+    var visitor = parseCookie(document.cookie);
+    if (visitor != "" || visitor != null || visitor != undefined) {
+        cookiedUser = visitor
+    } else {
+        document.cookie = `visitor=${now}`;
+        cookieManager(document.cookie)
+    }
+}
+
 ///////////// DATABASE SETUP//////////////////////////////
 
 var firebaseConfig = {
@@ -11,15 +47,6 @@ var firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
-
-///////////// VARIABLE INITIALIZATION //////////////////////////////
-
-let accrEntryPointButton = 0;
-let accrDivStudyHelper = 0;
-let accrDivDashboard = 0;
-let accrApplicationsSideNavLink = 0;
-let accrSideNavTriggerButton = 0;
-let accrMinorProjectsContainer = 0;
 
 ///////////// INITIAL AND CONTINUOUS DB SYNCING //////////////////////////////
 
@@ -71,83 +98,47 @@ database.ref().on("value", function (snapshot) {
 ///////////// CLICK TRACKING//////////////////////////////
 
 $(document).on("click", "#entryPointButton", function () {
-    let accumulator = `logs/entryPointButton/total`
-    let clickRecord = `logs/entryPointButton/${accrEntryPointButton + 1}/timeStamp`
+    let clickRecord = `logs/entryPointButton/${cookiedUser}/timeStamp`
     database.ref('/').update({
-        [accumulator]: accrEntryPointButton + 1,
-        [clickRecord]: firebase.database.ServerValue.TIMESTAMP
+        [clickRecord]: moment().format('YYYY-MM-DD_h:mm:ss_A')
     });
 });
 
 $(document).on("click", "#divStudyHelper", function () {
-    let accumulator = `logs/divStudyHelper/total`
-    let clickRecord = `logs/divStudyHelper/${accrDivStudyHelper + 1}/timeStamp`
+    let clickRecord = `logs/divStudyHelper/${cookiedUser}/timeStamp`
     database.ref('/').update({
-        [accumulator]: accrDivStudyHelper + 1,
-        [clickRecord]: firebase.database.ServerValue.TIMESTAMP
+        [clickRecord]: moment().format('YYYY-MM-DD_h:mm:ss_A')
     });
 });
 
 $(document).on("click", "#divDashboard", function () {
-    let accumulator = `logs/divDashboard/total`
-    let clickRecord = `logs/divDashboard/${accrDivDashboard + 1}/timeStamp`
+    let clickRecord = `logs/divDashboard/${cookiedUser}/timeStamp`
     database.ref('/').update({
-        [accumulator]: accrDivDashboard + 1,
-        [clickRecord]: firebase.database.ServerValue.TIMESTAMP
+        [clickRecord]: moment().format('YYYY-MM-DD_h:mm:ss_A')
     });
 });
 
 $(document).on("click", "#applicationsSideNavLink", function () {
-    let accumulator = `logs/applicationsSideNavLink/total`
-    let clickRecord = `logs/applicationsSideNavLink/${accrApplicationsSideNavLink + 1}/timeStamp`
+    let clickRecord = `logs/applicationsSideNavLink/${cookiedUser}/timeStamp`
     database.ref('/').update({
-        [accumulator]: accrApplicationsSideNavLink + 1,
-        [clickRecord]: firebase.database.ServerValue.TIMESTAMP
+        [clickRecord]: moment().format('YYYY-MM-DD_h:mm:ss_A')
     });
 });
 
 $(document).on("click", "#sideNavTriggerButton", function () {
-    let accumulator = `logs/sideNavTriggerButton/total`
-    let clickRecord = `logs/sideNavTriggerButton/${accrSideNavTriggerButton + 1}/timeStamp`
+    let clickRecord = `logs/sideNavTriggerButton/${cookiedUser}/timeStamp`
     database.ref('/').update({
-        [accumulator]: accrSideNavTriggerButton + 1,
-        [clickRecord]: firebase.database.ServerValue.TIMESTAMP
+        [clickRecord]: moment().format('YYYY-MM-DD_h:mm:ss_A')
     });
 });
 
 $(document).on("click", "#minorProjectsContainer", function () {
-    let accumulator = `logs/minorProjectsContainer/total`
-    let clickRecord = `logs/minorProjectsContainer/${accrMinorProjectsContainer + 1}/timeStamp`
+    let clickRecord = `logs/minorProjectsContainer/${cookiedUser}/timeStamp`
     database.ref('/').update({
-        [accumulator]: accrMinorProjectsContainer + 1,
-        [clickRecord]: firebase.database.ServerValue.TIMESTAMP
+        [clickRecord]: moment().format('YYYY-MM-DD_h:mm:ss_A')
     });
 });
-
-///////////// COOKIES //////////////////////////////
-
-function parseCookie(cookieString) {
-    console.log(cookieString)
-    let cookieValue = []
-    let equalsIndex = cookieString.indexOf('=')
-    for (i = 0; i < cookieString.length; i++) {
-        if (i > equalsIndex) {
-            cookieValue.push(cookieString[i])
-        }
-    }
-    return cookieValue.join("")
-}
-function cookieManager() {
-    let now = moment().format('YYYY-MM-DD_h:mm:ss_A')
-    var visitor = parseCookie(document.cookie);
-    if (visitor != "" || visitor != null || visitor != undefined) {
-        console.log(visitor)
-    } else {
-        document.cookie = `visitor=${now}`;
-    }
-}
 
 ///////////// RUN PROGRAM //////////////////////////////
 
 cookieManager()
-console.log(parseCookie(document.cookie))
