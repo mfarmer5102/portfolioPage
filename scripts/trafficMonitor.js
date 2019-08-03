@@ -135,7 +135,7 @@ function parseCookie(cookieString) {
             cookieValue.push(cookieString[i])
         }
     }
-    return cookieValue.toString()
+    return cookieValue.join("")
 }
 function cookieManager() {
     let now = moment().format('YYYY-MM-DD_h:mm:ss_A')
