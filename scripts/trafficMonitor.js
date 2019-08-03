@@ -23,49 +23,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
 
-///////////// CLICK TRACKING//////////////////////////////
-
-// $(document).on("click", "#entryPointButton", function () {
-//     let clickRecord = `activity/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/${moment().format('h:mm:ss A')}`
-//     database.ref('/').update({
-//         [clickRecord]: 'entryPointButton'
-//     });
-// });
-
-// $(document).on("click", "#divStudyHelper", function () {
-//     let clickRecord = `activity/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/${moment().format('h:mm:ss A')}`
-//     database.ref('/').update({
-//         [clickRecord]: 'divStudyHelper'
-//     });
-// });
-
-// $(document).on("click", "#divDashboard", function () {
-//     let clickRecord = `activity/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/${moment().format('h:mm:ss A')}`
-//     database.ref('/').update({
-//         [clickRecord]: 'divDashboard'
-//     });
-// });
-
-// $(document).on("click", "#applicationsSideNavLink", function () {
-//     let clickRecord = `activity/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/${moment().format('h:mm:ss A')}`
-//     database.ref('/').update({
-//         [clickRecord]: 'applicationsSideNavLink'
-//     });
-// });
-
-// $(document).on("click", "#sideNavTriggerButton", function () {
-//     let clickRecord = `activity/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/${moment().format('h:mm:ss A')}`
-//     database.ref('/').update({
-//         [clickRecord]: 'sideNavTriggerButton'
-//     });
-// });
-
-// $(document).on("click", "#minorProjectsContainer", function () {
-//     let clickRecord = `activity/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/${moment().format('h:mm:ss A')}`
-//     database.ref('/').update({
-//         [clickRecord]: 'minorProjectsContainer'
-//     });
-// });
+///////////// CAPTURE CLICK EVENTS AND LOG TO DATABASE //////////////////////////////
 
 function logUserActivity(elementID) {
     if (elementID !== undefined) {
@@ -76,15 +34,14 @@ function logUserActivity(elementID) {
     }
 }
 
-
 $(document).ready(function(){
     $("a").click(function(){
-        logUserActivity($(this).attr('id'))
+        logUserActivity($(this).attr('data-seed'))
     });
     $("button").click(function(){
-        logUserActivity($(this).attr('id'))
+        logUserActivity($(this).attr('data-seed'))
     });
     $("div").click(function(){
-        logUserActivity($(this).attr('id'))
+        logUserActivity($(this).attr('data-seed'))
     });
   });
