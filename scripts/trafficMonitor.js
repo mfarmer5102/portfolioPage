@@ -1,7 +1,3 @@
-///////////// RUN PROGRAM //////////////////////////////
-
-cookieManager()
-
 ///////////// VARIABLE INITIALIZATION //////////////////////////////
 
 let accrEntryPointButton = 0;
@@ -37,6 +33,8 @@ function cookieManager() {
         cookieManager(document.cookie)
     }
 }
+
+cookieManager()
 
 ///////////// DATABASE SETUP//////////////////////////////
 
