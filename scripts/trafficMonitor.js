@@ -82,45 +82,43 @@ database.ref().on("value", function (snapshot) {
 ///////////// CLICK TRACKING//////////////////////////////
 
 $(document).on("click", "#entryPointButton", function () {
-    let clickRecord = `logs/${localStorage.getItem('visitorID')}/entryPointButton/${moment().format('YYYY-MM-DD h:mm:ss A')}`
+    let clickRecord = `logs/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/entryPointButton/${moment().format('h:mm:ss A')}`
     database.ref('/').update({
-        [clickRecord]: moment().format('YYYY-MM-DD_h:mm:ss_A')
+        [clickRecord]: 'entryPointButton'
     });
 });
 
 $(document).on("click", "#divStudyHelper", function () {
-    let clickRecord = `logs/${localStorage.getItem('visitorID')}/divStudyHelper/${moment().format('YYYY-MM-DD h:mm:ss A')}`
+    let clickRecord = `logs/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/divStudyHelper/${moment().format('h:mm:ss A')}`
     database.ref('/').update({
-        [clickRecord]: moment().format('YYYY-MM-DD_h:mm:ss_A')
+        [clickRecord]: 'divStudyHelper'
     });
 });
 
 $(document).on("click", "#divDashboard", function () {
-    let clickRecord = `logs/${localStorage.getItem('visitorID')}/divDashboard/${moment().format('YYYY-MM-DD h:mm:ss A')}`
+    let clickRecord = `logs/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/divDashboard/${moment().format('h:mm:ss A')}`
     database.ref('/').update({
-        [clickRecord]: moment().format('YYYY-MM-DD_h:mm:ss_A')
+        [clickRecord]: 'divDashboard'
     });
 });
 
 $(document).on("click", "#applicationsSideNavLink", function () {
-    let clickRecord = `logs/${localStorage.getItem('visitorID')}/applicationsSideNavLink/${moment().format('YYYY-MM-DD h:mm:ss A')}`
+    let clickRecord = `logs/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/applicationsSideNavLink/${moment().format('h:mm:ss A')}`
     database.ref('/').update({
-        [clickRecord]: moment().format('YYYY-MM-DD_h:mm:ss_A')
+        [clickRecord]: 'applicationsSideNavLink'
     });
 });
 
 $(document).on("click", "#sideNavTriggerButton", function () {
-    let clickRecord = `logs/${localStorage.getItem('visitorID')}/sideNavTriggerButton/${moment().format('YYYY-MM-DD h:mm:ss A')}`
+    let clickRecord = `logs/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/sideNavTriggerButton/${moment().format('h:mm:ss A')}`
     database.ref('/').update({
-        [clickRecord]: moment().format('YYYY-MM-DD_h:mm:ss_A')
+        [clickRecord]: 'sideNavTriggerButton'
     });
 });
 
 $(document).on("click", "#minorProjectsContainer", function () {
-    let clickRecord = `logs/${localStorage.getItem('visitorID')}/minorProjectsContainer/${moment().format('YYYY-MM-DD h:mm:ss A')}`
+    let clickRecord = `logs/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/minorProjectsContainer/${moment().format('h:mm:ss A')}`
     database.ref('/').update({
-        [clickRecord]: moment().format('YYYY-MM-DD h:mm:ss A')
+        [clickRecord]: 'minorProjectsContainer'
     });
 });
-
-
