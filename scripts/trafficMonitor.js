@@ -25,44 +25,66 @@ var database = firebase.database();
 
 ///////////// CLICK TRACKING//////////////////////////////
 
-$(document).on("click", "#entryPointButton", function () {
-    let clickRecord = `logs/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/${moment().format('h:mm:ss A')}`
-    database.ref('/').update({
-        [clickRecord]: 'entryPointButton'
-    });
-});
+// $(document).on("click", "#entryPointButton", function () {
+//     let clickRecord = `activity/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/${moment().format('h:mm:ss A')}`
+//     database.ref('/').update({
+//         [clickRecord]: 'entryPointButton'
+//     });
+// });
 
-$(document).on("click", "#divStudyHelper", function () {
-    let clickRecord = `logs/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/${moment().format('h:mm:ss A')}`
-    database.ref('/').update({
-        [clickRecord]: 'divStudyHelper'
-    });
-});
+// $(document).on("click", "#divStudyHelper", function () {
+//     let clickRecord = `activity/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/${moment().format('h:mm:ss A')}`
+//     database.ref('/').update({
+//         [clickRecord]: 'divStudyHelper'
+//     });
+// });
 
-$(document).on("click", "#divDashboard", function () {
-    let clickRecord = `logs/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/${moment().format('h:mm:ss A')}`
-    database.ref('/').update({
-        [clickRecord]: 'divDashboard'
-    });
-});
+// $(document).on("click", "#divDashboard", function () {
+//     let clickRecord = `activity/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/${moment().format('h:mm:ss A')}`
+//     database.ref('/').update({
+//         [clickRecord]: 'divDashboard'
+//     });
+// });
 
-$(document).on("click", "#applicationsSideNavLink", function () {
-    let clickRecord = `logs/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/${moment().format('h:mm:ss A')}`
-    database.ref('/').update({
-        [clickRecord]: 'applicationsSideNavLink'
-    });
-});
+// $(document).on("click", "#applicationsSideNavLink", function () {
+//     let clickRecord = `activity/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/${moment().format('h:mm:ss A')}`
+//     database.ref('/').update({
+//         [clickRecord]: 'applicationsSideNavLink'
+//     });
+// });
 
-$(document).on("click", "#sideNavTriggerButton", function () {
-    let clickRecord = `logs/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/${moment().format('h:mm:ss A')}`
-    database.ref('/').update({
-        [clickRecord]: 'sideNavTriggerButton'
-    });
-});
+// $(document).on("click", "#sideNavTriggerButton", function () {
+//     let clickRecord = `activity/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/${moment().format('h:mm:ss A')}`
+//     database.ref('/').update({
+//         [clickRecord]: 'sideNavTriggerButton'
+//     });
+// });
 
-$(document).on("click", "#minorProjectsContainer", function () {
-    let clickRecord = `logs/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/${moment().format('h:mm:ss A')}`
-    database.ref('/').update({
-        [clickRecord]: 'minorProjectsContainer'
+// $(document).on("click", "#minorProjectsContainer", function () {
+//     let clickRecord = `activity/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/${moment().format('h:mm:ss A')}`
+//     database.ref('/').update({
+//         [clickRecord]: 'minorProjectsContainer'
+//     });
+// });
+
+function logUserActivity(elementID) {
+    if (elementID !== undefined) {
+        let clickRecord = `activity/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/${moment().format('h:mm:ss A')}`
+        database.ref('/').update({
+            [clickRecord]: elementID
+        });
+    }
+}
+
+
+$(document).ready(function(){
+    $("a").click(function(){
+        logUserActivity($(this).attr('id'))
     });
-});
+    $("button").click(function(){
+        logUserActivity($(this).attr('id'))
+    });
+    $("div").click(function(){
+        logUserActivity($(this).attr('id'))
+    });
+  });
