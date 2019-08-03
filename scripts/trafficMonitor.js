@@ -98,44 +98,44 @@ database.ref().on("value", function (snapshot) {
 ///////////// CLICK TRACKING//////////////////////////////
 
 $(document).on("click", "#entryPointButton", function () {
-    let clickRecord = `logs/entryPointButton/${cookiedUser}/timeStamp`
+    let clickRecord = `logs/entryPointButton/${cookieManager(document.cookie)}/${moment().format('YYYY-MM-DD h:mm:ss A')}`
     database.ref('/').update({
         [clickRecord]: moment().format('YYYY-MM-DD_h:mm:ss_A')
     });
 });
 
 $(document).on("click", "#divStudyHelper", function () {
-    let clickRecord = `logs/divStudyHelper/${cookiedUser}/timeStamp`
+    let clickRecord = `logs/divStudyHelper/${cookieManager(document.cookie)}/${moment().format('YYYY-MM-DD h:mm:ss A')}`
     database.ref('/').update({
         [clickRecord]: moment().format('YYYY-MM-DD_h:mm:ss_A')
     });
 });
 
 $(document).on("click", "#divDashboard", function () {
-    let clickRecord = `logs/divDashboard/${cookiedUser}/timeStamp`
+    let clickRecord = `logs/divDashboard/${cookieManager(document.cookie)}/${moment().format('YYYY-MM-DD h:mm:ss A')}`
     database.ref('/').update({
         [clickRecord]: moment().format('YYYY-MM-DD_h:mm:ss_A')
     });
 });
 
 $(document).on("click", "#applicationsSideNavLink", function () {
-    let clickRecord = `logs/applicationsSideNavLink/${cookiedUser}/timeStamp`
+    let clickRecord = `logs/applicationsSideNavLink/${cookieManager(document.cookie)}/${moment().format('YYYY-MM-DD h:mm:ss A')}`
     database.ref('/').update({
         [clickRecord]: moment().format('YYYY-MM-DD_h:mm:ss_A')
     });
 });
 
 $(document).on("click", "#sideNavTriggerButton", function () {
-    let clickRecord = `logs/sideNavTriggerButton/${cookiedUser}/timeStamp`
+    let clickRecord = `logs/sideNavTriggerButton/${cookieManager(document.cookie)}/${moment().format('YYYY-MM-DD h:mm:ss A')}`
     database.ref('/').update({
         [clickRecord]: moment().format('YYYY-MM-DD_h:mm:ss_A')
     });
 });
 
 $(document).on("click", "#minorProjectsContainer", function () {
-    let clickRecord = `logs/minorProjectsContainer/${cookiedUser}/timeStamp`
+    let clickRecord = `logs/minorProjectsContainer/${cookieManager(document.cookie)}/${moment().format('YYYY-MM-DD h:mm:ss A')}`
     database.ref('/').update({
-        [clickRecord]: moment().format('YYYY-MM-DD_h:mm:ss_A')
+        [clickRecord]: moment().format('YYYY-MM-DD h:mm:ss A')
     });
 });
 
