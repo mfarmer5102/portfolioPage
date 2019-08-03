@@ -17,13 +17,10 @@ var database = firebase.database();
 function setKey() {
     let currentKey = localStorage.getItem('visitorID')
     if (currentKey === null || currentKey === undefined || currentKey === '') {
-        let assignedKey = `visitor${moment().unix()}` // ie visitorID
-        localStorage.setItem('visitorID', assignedKey)
-        let namePath = `activity/${assignedKey}` 
-        let firstArrivalPath = `activity/${assignedKey}/firstArrival`
+        localStorage.setItem('visitorID', `visitor${moment().unix()}`)
+        let path = `activity/${localStorage.getItem('visitorID')}/firstArrival`
         database.ref('/').update({
-            [namePath]: assignedKey,
-            [firstArrivalPath]: moment().format('YYYY-MM-DD HH:mm:ss')
+            [path]: moment().format('YYYY-MM-DD H:mm:ss A')
         });
     }
 }
@@ -34,7 +31,7 @@ setKey()
 
 function logUserActivity(elementID) {
     if (elementID !== undefined) {
-        let clickRecord = `activity/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/${moment().format('HH:mm:ss')}`
+        let clickRecord = `activity/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/${moment().format('H:mm:ss A')}`
         database.ref('/').update({
             [clickRecord]: elementID
         });
@@ -51,4 +48,3 @@ $(document).ready(function () {
     $("div").click(function () {
         logUserActivity($(this).attr('data-seed'))
     });
-});
