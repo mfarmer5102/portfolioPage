@@ -100,15 +100,27 @@ main {
     }
 }
 
-@media only screen and (min-width: 861px) and (max-width: 930px) {
+@media only screen and (min-width: 861px) and (max-width: 1150px) {
     #applicationsPage .card {
         min-height: 400px !important;
     }
 }
 
-@media only screen and (min-width: 931px) and (max-width: 1150px) {
+@media only screen and (min-width: 1150px) and (max-width: 1549px) {
     #applicationsPage .card {
-        min-height: 400px !important;
+        min-height: 410px !important;
+    }
+}
+
+@media only screen and (min-width: 1550px) and (max-width: 1920px) {
+    #applicationsPage .card {
+        min-height: 420px !important;
+    }
+}
+
+@media only screen and (min-width: 1921px) {
+    #applicationsPage .card {
+        min-height: 430px !important;
     }
 }
 
