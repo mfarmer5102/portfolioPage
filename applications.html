@@ -40,7 +40,7 @@
 
 </head>
 
-<body>
+<body style='position: relative'>
 
     <!--Header-->
     <div class="row">
@@ -83,334 +83,376 @@
 
     <main id='applicationsPage' class='container thin-font'>
 
-        <h3 class='thin-font'>Featured Apps.</h3>
+        <!-- ##############################
+        Featured Apps
+        ############################## -->
 
-        <div class='row'>
+        <section id="featuredApps" class="section scrollspy">
+            <h3 class="thin-font">Featured Apps.</h3>
 
-            <!--Start Card-->
-            <div id='divStudyHelper' class='col l6 m12 s12'>
-                <div class="card">
-                    <a data-seed="App: Study Helper, Thumbnail" href="https://mystudyhelper.herokuapp.com/"
-                        id='studyHelperThumbnail'>
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img src="appImages/studyhelper.png">
+            <div class='row'>
+
+                <!--Start Card-->
+                <div id='divStudyHelper' class='col l6 m12 s12'>
+                    <div class="card">
+                        <a data-seed="App: Study Helper, Thumbnail" href="https://mystudyhelper.herokuapp.com/"
+                            id='studyHelperThumbnail'>
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img src="appImages/studyhelper.png">
+                            </div>
+                        </a>
+                        <div class="card-content">
+                            <span data-seed="App: Study Helper, Arrow" class="card-title grey-text text-darken-4">Study
+                                Helper<a href='https://mystudyhelper.herokuapp.com/' style="color: black"><i
+                                        class="material-icons right">call_made</i></a></span>
+                            <small>Uses: NodeJS, PostgreSQL, Heroku, JavaScript, User Authentication, Express,
+                                HandlebarsJS,
+                                jQuery</small>
+                            <p><a data-seed="App: Study Helper, Details" class='activator'
+                                    style="cursor: pointer">Details</a> | <a data-seed="App: Study Helper, Source Code"
+                                    href="https://github.com/cafeamericano/studyHelper">View Source</a></p>
                         </div>
-                    </a>
-                    <div class="card-content">
-                        <span data-seed="App: Study Helper, Arrow" class="card-title grey-text text-darken-4">Study
-                            Helper<a href='https://mystudyhelper.herokuapp.com/' style="color: black"><i
-                                class="material-icons right">call_made</i></a></span>
-                        <small>Uses: NodeJS, PostgreSQL, Heroku, JavaScript, User Authentication, Express, HandlebarsJS,
-                            jQuery</small>
-                        <p><a data-seed="App: Study Helper, Details" class='activator'
-                                style="cursor: pointer">Details</a> | <a data-seed="App: Study Helper, Source Code"
-                                href="https://github.com/cafeamericano/studyHelper">View Source</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Study Helper<i
-                                class="material-icons right">close</i></span>
-                        <p>Keep track of your study habits with this elegantly designed application. Demonstrates
-                            understanding of NodeJS, PostgreSQL, Express, Handlebars, AJAX, and more.</p>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Study Helper<i
+                                    class="material-icons right">close</i></span>
+                            <p>Keep track of your study habits with this elegantly designed application. Demonstrates
+                                understanding of NodeJS, PostgreSQL, Express, Handlebars, AJAX, and more.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--End Card-->
+                <!--End Card-->
 
-            <!--Start Card-->
-            <div id='divDashboard' class='col l6 m12 s12'>
-                <div class="card">
-                    <a data-seed="App: Dashboard, Thumbnail"
-                        href='https://cafeamericano.github.io/UNC-Project01/index.html'>
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img src="appImages/dashboard.png">
+                <!--Start Card-->
+                <div id='divDashboard' class='col l6 m12 s12'>
+                    <div class="card">
+                        <a data-seed="App: Dashboard, Thumbnail"
+                            href='https://cafeamericano.github.io/UNC-Project01/index.html'>
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img src="appImages/dashboard.png">
+                            </div>
+                        </a>
+                        <div class="card-content">
+                            <span data-seed="App: Dashboard, Arrow" class="card-title grey-text text-darken-4">Dashboard
+                                <a href='https://cafeamericano.github.io/UNC-Project01/index.html'
+                                    style="color: black"><i class="material-icons right">call_made</i></a></span>
+                            <small>Uses: JavaScript, Firebase Realtime Database, User Authentication, API Consumption,
+                                ChartsJS, jQuery</small>
+                            <p><a data-seed="App: Dashboard, Details" class='activator'
+                                    style="cursor: pointer">Details</a>
+                                | <a data-seed="App: Dashboard, Source Code"
+                                    href="https://github.com/cafeamericano/UNC-Project01">View Source</a></p>
                         </div>
-                    </a>
-                    <div class="card-content">
-                        <span data-seed="App: Dashboard, Arrow" class="card-title grey-text text-darken-4">Dashboard <a
-                                href='https://cafeamericano.github.io/UNC-Project01/index.html' style="color: black"><i
-                                    class="material-icons right">call_made</i></a></span>
-                        <small>Uses: JavaScript, Firebase Realtime Database, User Authentication, API Consumption,
-                            ChartsJS, jQuery</small>
-                        <p><a data-seed="App: Dashboard, Details" class='activator' style="cursor: pointer">Details</a>
-                            | <a data-seed="App: Dashboard, Source Code"
-                                href="https://github.com/cafeamericano/UNC-Project01">View Source</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Dashboard<i
-                                class="material-icons right">close</i></span>
-                        <p>Quickly get information on stocks, weather, news, and more in this one-stop application.
-                            Demonstrates understanding of APIs, jQuery, AJAX, Firebase Authentication, and collaborative
-                            development.</p>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Dashboard<i
+                                    class="material-icons right">close</i></span>
+                            <p>Quickly get information on stocks, weather, news, and more in this one-stop application.
+                                Demonstrates understanding of APIs, jQuery, AJAX, Firebase Authentication, and
+                                collaborative
+                                development.</p>
+                        </div>
                     </div>
                 </div>
+                <!--End Card-->
+
             </div>
-            <!--End Card-->
 
-        </div>
+        </section>
 
-        <h3 class="thin-font">Minor Projects.</h3>
+        <!-- ##############################
+        Minor Projects
+        ############################## -->
+        <section id="minorProjects" class="section scrollspy">
 
-        <div id='minorProjectsContainer' class='row'>
+            <h3 class="thin-font">Minor Projects.</h3>
 
-            <!--Start Card-->
-            <div data-seed="App: Bamazon" class='col s12 m6 l6 xl4'>
-                <div class="card">
-                    <a href="https://github.com/cafeamericano/UNC-12MySQL" id='bamazonThumbnail'>
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img src="appImages/bamazon.png">
+            <div id='minorProjectsContainer' class='row'>
+
+                <!--Start Card-->
+                <div data-seed="App: Bamazon" class='col s12 m6 l6 xl4'>
+                    <div class="card">
+                        <a href="https://github.com/cafeamericano/UNC-12MySQL" id='bamazonThumbnail'>
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img src="appImages/bamazon.png">
+                            </div>
+                        </a>
+                        <div class="card-content">
+                            <span class="card-title grey-text text-darken-4">Bamazon (MySQL)<a style="color: silver"><i
+                                        class="material-icons right">call_made</i></a></span>
+                            <small>Uses: NodeJS, MySQL, JavaScript</small>
+                            <p><a class='activator' style="cursor: pointer">Details</a> | <a
+                                    href="https://github.com/cafeamericano/UNC-12MySQL">View Source</a></p>
                         </div>
-                    </a>
-                    <div class="card-content">
-                        <span class="card-title grey-text text-darken-4">Bamazon (MySQL)<a style="color: silver"><i
-                                    class="material-icons right">call_made</i></a></span>
-                        <small>Uses: NodeJS, MySQL, JavaScript</small>
-                        <p><a class='activator' style="cursor: pointer">Details</a> | <a
-                                href="https://github.com/cafeamericano/UNC-12MySQL">View Source</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Bamazon (MySQL)<i
-                                class="material-icons right">close</i></span>
-                        <p>Access this artificial storefront as either a customer, manager, or supervisor. Built using
-                            MySQL, NodeJS, and the Inquirer NPM package.</p>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Bamazon (MySQL)<i
+                                    class="material-icons right">close</i></span>
+                            <p>Access this artificial storefront as either a customer, manager, or supervisor. Built
+                                using
+                                MySQL, NodeJS, and the Inquirer NPM package.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--End Card-->
+                <!--End Card-->
 
-            <!--Start Card-->
-            <div data-seed="App: Word Guess Node" class='col s12 m6 l6 xl4'>
-                <div class="card">
-                    <a href="https://github.com/cafeamericano/UNC-11WordGuess" id='hangmanNodeThumbnail'>
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img src="appImages/wordGuessNode.png">
+                <!--Start Card-->
+                <div data-seed="App: Word Guess Node" class='col s12 m6 l6 xl4'>
+                    <div class="card">
+                        <a href="https://github.com/cafeamericano/UNC-11WordGuess" id='hangmanNodeThumbnail'>
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img src="appImages/wordGuessNode.png">
+                            </div>
+                        </a>
+                        <div class="card-content">
+                            <span class="card-title grey-text text-darken-4">Hangman (Node)<a style="color: silver"><i
+                                        class="material-icons right">call_made</i></a></span>
+                            <small>Uses: NodeJS, JavaScript</small>
+                            <p><a class='activator' style="cursor: pointer">Details</a> | <a
+                                    href="https://github.com/cafeamericano/UNC-11WordGuess">View Source</a></p>
                         </div>
-                    </a>
-                    <div class="card-content">
-                        <span class="card-title grey-text text-darken-4">Hangman (Node)<a style="color: silver"><i
-                                    class="material-icons right">call_made</i></a></span>
-                        <small>Uses: NodeJS, JavaScript</small>
-                        <p><a class='activator' style="cursor: pointer">Details</a> | <a
-                                href="https://github.com/cafeamericano/UNC-11WordGuess">View Source</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Hangman (Node)<i
-                                class="material-icons right">close</i></span>
-                        <p>Correctly guess the letters that appear in the secret word to win the game.</p>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Hangman (Node)<i
+                                    class="material-icons right">close</i></span>
+                            <p>Correctly guess the letters that appear in the secret word to win the game.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--End Card-->
+                <!--End Card-->
 
-            <!--Start Card-->
-            <div data-seed="App: LIRI" class='col s12 m6 l6 xl4'>
-                <div class="card">
-                    <a href="https://github.com/cafeamericano/UNC-10LiriBot" id='liriBotThumbnail'>
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img src="appImages/liri.png">
+                <!--Start Card-->
+                <div data-seed="App: LIRI" class='col s12 m6 l6 xl4'>
+                    <div class="card">
+                        <a href="https://github.com/cafeamericano/UNC-10LiriBot" id='liriBotThumbnail'>
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img src="appImages/liri.png">
+                            </div>
+                        </a>
+                        <div class="card-content">
+                            <span class="card-title grey-text text-darken-4">LIRI Bot (Node)<a style="color: silver"><i
+                                        class="material-icons right">call_made</i></a></span>
+                            <small>Uses: NodeJS, JavaScript, API Consumption</small>
+                            <p><a class='activator' style="cursor: pointer">Details</a> | <a
+                                    href="https://github.com/cafeamericano/UNC-10LiriBot">View Source</a></p>
                         </div>
-                    </a>
-                    <div class="card-content">
-                        <span class="card-title grey-text text-darken-4">LIRI Bot (Node)<a style="color: silver"><i
-                                    class="material-icons right">call_made</i></a></span>
-                        <small>Uses: NodeJS, JavaScript, API Consumption</small>
-                        <p><a class='activator' style="cursor: pointer">Details</a> | <a
-                                href="https://github.com/cafeamericano/UNC-10LiriBot">View Source</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">LIRI Bot (Node)<i
-                                class="material-icons right">close</i></span>
-                        <p>Search concerts, songs, and movies via the OMDB, Spotify, and BandsInTown APIs with this
-                            intelligent assistant.</p>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">LIRI Bot (Node)<i
+                                    class="material-icons right">close</i></span>
+                            <p>Search concerts, songs, and movies via the OMDB, Spotify, and BandsInTown APIs with this
+                                intelligent assistant.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--End Card-->
+                <!--End Card-->
 
-            <!--Start Card-->
-            <div data-seed="App: RPS Live" class='col s12 m6 l6 xl4'>
-                <div class="card">
-                    <a href='https://cafeamericano.github.io/UNC-07RPSmultiplayer/'>
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img src="appImages/rpslive.png">
+                <!--Start Card-->
+                <div data-seed="App: RPS Live" class='col s12 m6 l6 xl4'>
+                    <div class="card">
+                        <a href='https://cafeamericano.github.io/UNC-07RPSmultiplayer/'>
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img src="appImages/rpslive.png">
+                            </div>
+                        </a>
+                        <div class="card-content">
+                            <span class="card-title grey-text text-darken-4">RPS Live <a
+                                    href='https://cafeamericano.github.io/UNC-07RPSmultiplayer/' style="color: black"><i
+                                        class="material-icons right">call_made</i></a></span>
+                            <small>Uses: JavaScript, Firebase, jQuery</small>
+                            <p><a class='activator' style="cursor: pointer">Details</a> | <a
+                                    href="https://github.com/cafeamericano/UNC-07RPSmultiplayer">View Source</a></p>
                         </div>
-                    </a>
-                    <div class="card-content">
-                        <span class="card-title grey-text text-darken-4">RPS Live <a
-                                href='https://cafeamericano.github.io/UNC-07RPSmultiplayer/' style="color: black"><i
-                                    class="material-icons right">call_made</i></a></span>
-                        <small>Uses: JavaScript, Firebase, jQuery</small>
-                        <p><a class='activator' style="cursor: pointer">Details</a> | <a
-                                href="https://github.com/cafeamericano/UNC-07RPSmultiplayer">View Source</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">RPS Live<i
-                                class="material-icons right">close</i></span>
-                        <p>Compete and communicate with a friend in a game of rock/paper/scissors.</p>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">RPS Live<i
+                                    class="material-icons right">close</i></span>
+                            <p>Compete and communicate with a friend in a game of rock/paper/scissors.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--End Card-->
+                <!--End Card-->
 
-            <!--Start Card-->
-            <div data-seed="App: Foodpalooza" class='col s12 m6 l6 xl4'>
-                <div class="card">
-                    <a href="https://cafeamericano.github.io/UNC-06GifSearch/">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img src="appImages/foodpalooza.png">
+                <!--Start Card-->
+                <div data-seed="App: Foodpalooza" class='col s12 m6 l6 xl4'>
+                    <div class="card">
+                        <a href="https://cafeamericano.github.io/UNC-06GifSearch/">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img src="appImages/foodpalooza.png">
+                            </div>
+                        </a>
+                        <div class="card-content">
+                            <span class="card-title grey-text text-darken-4">GIF Retriever <a
+                                    href="https://cafeamericano.github.io/UNC-06GifSearch/" style="color: black"><i
+                                        class="material-icons right">call_made</i></a></span>
+                            <small>Uses: JavaScript, AJAX, API Consumption, jQuery, Local Storage</small>
+                            <p><a class='activator' style="cursor: pointer">Details</a> | <a
+                                    href="https://github.com/cafeamericano/UNC-06GifSearch">View Source</a></p>
                         </div>
-                    </a>
-                    <div class="card-content">
-                        <span class="card-title grey-text text-darken-4">GIF Retriever <a
-                                href="https://cafeamericano.github.io/UNC-06GifSearch/" style="color: black"><i
-                                    class="material-icons right">call_made</i></a></span>
-                        <small>Uses: JavaScript, AJAX, API Consumption, jQuery, Local Storage</small>
-                        <p><a class='activator' style="cursor: pointer">Details</a> | <a
-                                href="https://github.com/cafeamericano/UNC-06GifSearch">View Source</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">GIF Retriever<i
-                                class="material-icons right">close</i></span>
-                        <p>Pull, view, and animate GIFs from the GIPHY API using asynchronous JavaScript.</p>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">GIF Retriever<i
+                                    class="material-icons right">close</i></span>
+                            <p>Pull, view, and animate GIFs from the GIPHY API using asynchronous JavaScript.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--End Card-->
+                <!--End Card-->
 
-            <!--Start Card-->
-            <div data-seed="App: Trivia" class='col s12 m6 l6 xl4'>
-                <div class="card">
-                    <a href="https://cafeamericano.github.io/UNC-05TriviaGame/">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img src="appImages/trivia.png">
+                <!--Start Card-->
+                <div data-seed="App: Trivia" class='col s12 m6 l6 xl4'>
+                    <div class="card">
+                        <a href="https://cafeamericano.github.io/UNC-05TriviaGame/">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img src="appImages/trivia.png">
+                            </div>
+                        </a>
+                        <div class="card-content">
+                            <span class="card-title grey-text text-darken-4">Timed Trivia <a
+                                    href="https://cafeamericano.github.io/UNC-05TriviaGame/" style="color: black"><i
+                                        class="material-icons right">call_made</i></a></span>
+                            <small>Uses: JavaScript, jQuery</small>
+                            <p><a class='activator' style="cursor: pointer">Details</a> | <a
+                                    href="https://github.com/cafeamericano/UNC-05TriviaGame">View Source</a></p>
                         </div>
-                    </a>
-                    <div class="card-content">
-                        <span class="card-title grey-text text-darken-4">Timed Trivia <a
-                                href="https://cafeamericano.github.io/UNC-05TriviaGame/" style="color: black"><i
-                                    class="material-icons right">call_made</i></a></span>
-                        <small>Uses: JavaScript, jQuery</small>
-                        <p><a class='activator' style="cursor: pointer">Details</a> | <a
-                                href="https://github.com/cafeamericano/UNC-05TriviaGame">View Source</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Timed Trivia<i
-                                class="material-icons right">close</i></span>
-                        <p>Answer questions within a time limit, then see your results.</p>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Timed Trivia<i
+                                    class="material-icons right">close</i></span>
+                            <p>Answer questions within a time limit, then see your results.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--End Card-->
+                <!--End Card-->
 
-            <!--Start Card-->
-            <div data-seed="App: RPG II" class='col s12 m6 l6 xl4'>
-                <div class="card">
-                    <a href="https://cafeamericano.github.io/fantasyBattle/">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img src="appImages/rpg2.png">
+                <!--Start Card-->
+                <div data-seed="App: RPG II" class='col s12 m6 l6 xl4'>
+                    <div class="card">
+                        <a href="https://cafeamericano.github.io/fantasyBattle/">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img src="appImages/rpg2.png">
+                            </div>
+                        </a>
+                        <div class="card-content">
+                            <span class="card-title grey-text text-darken-4">RPG Game II <a
+                                    href="https://cafeamericano.github.io/fantasyBattle/" style="color: black"><i
+                                        class="material-icons right">call_made</i></a></span>
+                            <small>Uses: JavaScript, jQuery</small>
+                            <p><a class='activator' style="cursor: pointer">Details</a> | <a
+                                    href="https://github.com/cafeamericano/fantasyBattle">View Source</a></p>
                         </div>
-                    </a>
-                    <div class="card-content">
-                        <span class="card-title grey-text text-darken-4">RPG Game II <a
-                                href="https://cafeamericano.github.io/fantasyBattle/" style="color: black"><i
-                                    class="material-icons right">call_made</i></a></span>
-                        <small>Uses: JavaScript, jQuery</small>
-                        <p><a class='activator' style="cursor: pointer">Details</a> | <a
-                                href="https://github.com/cafeamericano/fantasyBattle">View Source</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">RPG Game II<i
-                                class="material-icons right">close</i></span>
-                        <p>An alternate version of the original RPG Combat Game application.</p>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">RPG Game II<i
+                                    class="material-icons right">close</i></span>
+                            <p>An alternate version of the original RPG Combat Game application.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--End Card-->
+                <!--End Card-->
 
-            <!--Start Card-->
-            <div data-seed="App: RPG I" class='col s12 m6 l6 xl4'>
-                <div class="card">
-                    <a href="https://cafeamericano.github.io/UNC-04UnitFourGame/">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img src="appImages/rpg1.png">
+                <!--Start Card-->
+                <div data-seed="App: RPG I" class='col s12 m6 l6 xl4'>
+                    <div class="card">
+                        <a href="https://cafeamericano.github.io/UNC-04UnitFourGame/">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img src="appImages/rpg1.png">
+                            </div>
+                        </a>
+                        <div class="card-content">
+                            <span class="card-title grey-text text-darken-4">RPG Game I <a
+                                    href="https://cafeamericano.github.io/UNC-04UnitFourGame/" style="color: black"><i
+                                        class="material-icons right">call_made</i></a></span>
+                            <small>Uses: JavaScript, jQuery</small>
+                            <p><a class='activator' style="cursor: pointer">Details</a> | <a
+                                    href="https://github.com/cafeamericano/UNC-04UnitFourGame">View Source</a></p>
                         </div>
-                    </a>
-                    <div class="card-content">
-                        <span class="card-title grey-text text-darken-4">RPG Game I <a
-                                href="https://cafeamericano.github.io/UNC-04UnitFourGame/" style="color: black"><i
-                                    class="material-icons right">call_made</i></a></span>
-                        <small>Uses: JavaScript, jQuery</small>
-                        <p><a class='activator' style="cursor: pointer">Details</a> | <a
-                                href="https://github.com/cafeamericano/UNC-04UnitFourGame">View Source</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">RPG Game I<i
-                                class="material-icons right">close</i></span>
-                        <p>Select a character, then choose your battles carefully to win the game!</p>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">RPG Game I<i
+                                    class="material-icons right">close</i></span>
+                            <p>Select a character, then choose your battles carefully to win the game!</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--End Card-->
+                <!--End Card-->
 
-            <!--Start Card-->
-            <div data-seed="App: Word Guess" class='col s12 m6 l6 xl4'>
-                <div class="card">
-                    <a href="https://cafeamericano.github.io/UNC03-WordGuessGame/">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img src="appImages/wordGuess.png">
+                <!--Start Card-->
+                <div data-seed="App: Word Guess" class='col s12 m6 l6 xl4'>
+                    <div class="card">
+                        <a href="https://cafeamericano.github.io/UNC03-WordGuessGame/">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img src="appImages/wordGuess.png">
+                            </div>
+                        </a>
+                        <div class="card-content">
+                            <span class="card-title grey-text text-darken-4">Word Guess <a
+                                    href="https://cafeamericano.github.io/UNC03-WordGuessGame/" style="color: black"><i
+                                        class="material-icons right">call_made</i></a></span>
+                            <small>Uses: JavaScript</small>
+                            <p><a class='activator' style="cursor: pointer">Details</a> | <a
+                                    href="https://github.com/cafeamericano/UNC03-WordGuessGame">View Source</a></p>
                         </div>
-                    </a>
-                    <div class="card-content">
-                        <span class="card-title grey-text text-darken-4">Word Guess <a
-                                href="https://cafeamericano.github.io/UNC03-WordGuessGame/" style="color: black"><i
-                                    class="material-icons right">call_made</i></a></span>
-                        <small>Uses: JavaScript</small>
-                        <p><a class='activator' style="cursor: pointer">Details</a> | <a
-                                href="https://github.com/cafeamericano/UNC03-WordGuessGame">View Source</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Word Guess<i
-                                class="material-icons right">close</i></span>
-                        <p>In this game, guess the word correctly to save the princess!</p>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Word Guess<i
+                                    class="material-icons right">close</i></span>
+                            <p>In this game, guess the word correctly to save the princess!</p>
+                        </div>
                     </div>
                 </div>
+                <!--End Card-->
             </div>
-            <!--End Card-->
-        </div>
 
-        <h3 class="thin-font">Non-JavaScript Applications.</h3>
+        </section>
 
-        <div id='nonJSContainer' class='row'>
+        <!-- ##############################
+        Non JavaScript
+        ############################## -->
 
-            <!--Start Card-->
-            <div data-seed="App: Python - Financial Reporter" class='col s12 m6 l6 xl4'>
-                <div class="card">
-                    <a id='pyFinRepThumbnail' href="https://github.com/cafeamericano/py-financialreporter">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img src="appImages/py-finrep.png">
+        <section id="nonJavaScript" class="section scrollspy">
+
+            <h3 class="thin-font">Non-JavaScript Applications.</h3>
+
+            <div id='nonJSContainer' class='row'>
+
+                <!--Start Card-->
+                <div data-seed="App: Python - Financial Reporter" class='col s12 m6 l6 xl4'>
+                    <div class="card">
+                        <a id='pyFinRepThumbnail' href="https://github.com/cafeamericano/py-financialreporter">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img src="appImages/py-finrep.png">
+                            </div>
+                        </a>
+                        <div class="card-content">
+                            <span class="card-title grey-text text-darken-4">Financial Reporter<a
+                                    style="color: silver"><i class="material-icons right">call_made</i></a></span>
+                            <small>Uses: Python</small>
+                            <p><a class='activator' style="cursor: pointer">Details</a> | <a
+                                    href="https://github.com/cafeamericano/py-financialreporter">View Source</a></p>
                         </div>
-                    </a>
-                    <div class="card-content">
-                        <span class="card-title grey-text text-darken-4">Financial Reporter<a style="color: silver"><i
-                                    class="material-icons right">call_made</i></a></span>
-                        <small>Uses: Python</small>
-                        <p><a class='activator' style="cursor: pointer">Details</a> | <a
-                                href="https://github.com/cafeamericano/py-financialreporter">View Source</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Financial Reporter<i
-                                class="material-icons right">close</i></span>
-                        <p>Generate a report of your assets, liabilities, and net worth with this Python application.</p>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Financial Reporter<i
+                                    class="material-icons right">close</i></span>
+                            <p>Generate a report of your assets, liabilities, and net worth with this Python
+                                application.
+                            </p>
+                        </div>
                     </div>
                 </div>
+                <!--End Card-->
+
             </div>
-            <!--End Card-->
-         
-        </div>
+        </section>
     </main>
+
+    <!-- Scrollspy Section -->
+    <div class="row">
+        <div class="col hide-on-med-and-down m3 l2" style='position: fixed; bottom: 10px; left: 10px'>
+            <ul class="section table-of-contents">
+                <li><a href="#featuredApps">Featured Apps</a></li>
+                <li><a href="#minorProjects">Minor Projects</a></li>
+                <li><a href="#nonJavaScript">Non-JavaScript</a></li>
+            </ul>
+        </div>
+    </div>
 
     <!-- Materialize Initialization-->
     <script>
         M.AutoInit();
+        $(document).ready(function () {
+            $('.scrollspy').scrollSpy();
+        });
+
     </script>
 
 </body>
