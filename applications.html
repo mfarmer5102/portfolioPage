@@ -19,6 +19,7 @@
 
     <!-- Custom CSS-->
     <link href='style/style.css' rel='stylesheet' type="text/css">
+    <link href='style/inflation.css' rel='stylesheet' type="text/css">
 
     <!--jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
@@ -37,6 +38,9 @@
 
     <!-- Click Events for Non-Deployed Apps-->
     <script src='scripts/clickEvents.js'></script>
+
+    <!-- Inflation Effect for Cards -->
+    <script src='scripts/inflation.js'></script>
 
 </head>
 
@@ -94,7 +98,7 @@
 
                 <!--Start Card-->
                 <div id='divStudyHelper' class='col l6 m12 s12'>
-                    <div class="card">
+                    <div class="card deflated">
                         <a data-seed="App: Study Helper, Thumbnail" href="https://mystudyhelper.herokuapp.com/"
                             id='studyHelperThumbnail'>
                             <div class="card-image waves-effect waves-block waves-light">
@@ -124,7 +128,7 @@
 
                 <!--Start Card-->
                 <div id='divDashboard' class='col l6 m12 s12'>
-                    <div class="card">
+                    <div class="card deflated">
                         <a data-seed="App: Dashboard, Thumbnail"
                             href='https://cafeamericano.github.io/UNC-Project01/index.html'>
                             <div class="card-image waves-effect waves-block waves-light">
@@ -169,7 +173,7 @@
 
                 <!--Start Card-->
                 <div data-seed="App: Bamazon" class='col s12 m6 l6 xl4'>
-                    <div class="card">
+                    <div class="card deflated">
                         <a href="https://github.com/cafeamericano/UNC-12MySQL" id='bamazonThumbnail'>
                             <div class="card-image waves-effect waves-block waves-light">
                                 <img src="appImages/bamazon.png">
@@ -195,7 +199,7 @@
 
                 <!--Start Card-->
                 <div data-seed="App: Word Guess Node" class='col s12 m6 l6 xl4'>
-                    <div class="card">
+                    <div class="card deflated">
                         <a href="https://github.com/cafeamericano/UNC-11WordGuess" id='hangmanNodeThumbnail'>
                             <div class="card-image waves-effect waves-block waves-light">
                                 <img src="appImages/wordGuessNode.png">
@@ -219,7 +223,7 @@
 
                 <!--Start Card-->
                 <div data-seed="App: LIRI" class='col s12 m6 l6 xl4'>
-                    <div class="card">
+                    <div class="card deflated">
                         <a href="https://github.com/cafeamericano/UNC-10LiriBot" id='liriBotThumbnail'>
                             <div class="card-image waves-effect waves-block waves-light">
                                 <img src="appImages/liri.png">
@@ -244,7 +248,7 @@
 
                 <!--Start Card-->
                 <div data-seed="App: RPS Live" class='col s12 m6 l6 xl4'>
-                    <div class="card">
+                    <div class="card deflated">
                         <a href='https://cafeamericano.github.io/UNC-07RPSmultiplayer/'>
                             <div class="card-image waves-effect waves-block waves-light">
                                 <img src="appImages/rpslive.png">
@@ -269,7 +273,7 @@
 
                 <!--Start Card-->
                 <div data-seed="App: Foodpalooza" class='col s12 m6 l6 xl4'>
-                    <div class="card">
+                    <div class="card deflated">
                         <a href="https://cafeamericano.github.io/UNC-06GifSearch/">
                             <div class="card-image waves-effect waves-block waves-light">
                                 <img src="appImages/foodpalooza.png">
@@ -294,7 +298,7 @@
 
                 <!--Start Card-->
                 <div data-seed="App: Trivia" class='col s12 m6 l6 xl4'>
-                    <div class="card">
+                    <div class="card deflated">
                         <a href="https://cafeamericano.github.io/UNC-05TriviaGame/">
                             <div class="card-image waves-effect waves-block waves-light">
                                 <img src="appImages/trivia.png">
@@ -319,7 +323,7 @@
 
                 <!--Start Card-->
                 <div data-seed="App: RPG II" class='col s12 m6 l6 xl4'>
-                    <div class="card">
+                    <div class="card deflated">
                         <a href="https://cafeamericano.github.io/fantasyBattle/">
                             <div class="card-image waves-effect waves-block waves-light">
                                 <img src="appImages/rpg2.png">
@@ -344,7 +348,7 @@
 
                 <!--Start Card-->
                 <div data-seed="App: RPG I" class='col s12 m6 l6 xl4'>
-                    <div class="card">
+                    <div class="card deflated">
                         <a href="https://cafeamericano.github.io/UNC-04UnitFourGame/">
                             <div class="card-image waves-effect waves-block waves-light">
                                 <img src="appImages/rpg1.png">
@@ -369,7 +373,7 @@
 
                 <!--Start Card-->
                 <div data-seed="App: Word Guess" class='col s12 m6 l6 xl4'>
-                    <div class="card">
+                    <div class="card deflated">
                         <a href="https://cafeamericano.github.io/UNC03-WordGuessGame/">
                             <div class="card-image waves-effect waves-block waves-light">
                                 <img src="appImages/wordGuess.png">
@@ -407,7 +411,7 @@
 
                 <!--Start Card-->
                 <div data-seed="App: Python - Financial Reporter" class='col s12 m6 l6 xl4'>
-                    <div class="card">
+                    <div class="card deflated">
                         <a id='pyFinRepThumbnail' href="https://github.com/cafeamericano/py-financialreporter">
                             <div class="card-image waves-effect waves-block waves-light">
                                 <img src="appImages/py-finrep.png">
@@ -446,9 +450,12 @@
         </div>
     </div>
 
-    <!-- Materialize Initialization-->
     <script>
+
+        //Materialize Initialization
         M.AutoInit();
+
+        //Scrollspy updating
         $(document).ready(function () {
             $('.scrollspy').scrollSpy();
         });
