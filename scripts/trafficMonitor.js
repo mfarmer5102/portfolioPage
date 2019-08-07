@@ -12,13 +12,13 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
 
-///////////// SET LOCAL STORAGE //////////////////////////////
+///////////// SET SESSION STORAGE //////////////////////////////
 
 function setKey() {
-    let currentKey = localStorage.getItem('visitorID')
+    let currentKey = sessionStorage.getItem('visitorID')
     if (currentKey === null || currentKey === undefined || currentKey === '') {
-        localStorage.setItem('visitorID', `visitor${moment().unix()}`)
-        let path = `activity/${localStorage.getItem('visitorID')}/firstArrival`
+        sessionStorage.setItem('visitorID', `Visited at ${moment().format('YYYY-MM-DD H:mm:ss A')}`)
+        let path = `activity/${sessionStorage.getItem('visitorID')}/arrival`
         database.ref('/').update({
             [path]: moment().format('YYYY-MM-DD H:mm:ss A')
         });
@@ -31,7 +31,7 @@ setKey()
 
 function logUserActivity(elementID) {
     if (elementID !== undefined) {
-        let clickRecord = `activity/${localStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/${moment().format('H:mm:ss A')}`
+        let clickRecord = `activity/${sessionStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/${moment().format('H:mm:ss A')}`
         database.ref('/').update({
             [clickRecord]: elementID
         });
