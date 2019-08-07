@@ -18,9 +18,9 @@ function setKey() {
     let currentKey = sessionStorage.getItem('visitorID')
     if (currentKey === null || currentKey === undefined || currentKey === '') {
         sessionStorage.setItem('visitorID', `Visited at ${moment().format('YYYY-MM-DD H:mm:ss A')}`)
-        let path = `activity/${sessionStorage.getItem('visitorID')}/arrival`
+        let path = `activity/${sessionStorage.getItem('visitorID')}/${moment().format('H:mm:ss A')}`
         database.ref('/').update({
-            [path]: moment().format('YYYY-MM-DD H:mm:ss A')
+            [path]: 'Arrived'
         });
     }
 }
@@ -31,7 +31,7 @@ setKey()
 
 function logUserActivity(elementID) {
     if (elementID !== undefined) {
-        let clickRecord = `activity/${sessionStorage.getItem('visitorID')}/${moment().format('YYYY-MM-DD')}/${moment().format('H:mm:ss A')}`
+        let clickRecord = `activity/${sessionStorage.getItem('visitorID')}/${moment().format('H:mm:ss A')}`
         database.ref('/').update({
             [clickRecord]: elementID
         });
