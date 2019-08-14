@@ -37,43 +37,43 @@ p {
 /* Ensure Consistency of App Card Sizes */
 
 @media only screen and (min-width: 600px) and (max-width: 761px) {
-    #applicationsPage .card {
+    #applicationsPage .inflatable {
         min-height: 360px !important;
     }
 }
 
 @media only screen and (min-width: 761px) and (max-width: 820px) {
-    #applicationsPage .card {
+    #applicationsPage .inflatable {
         min-height: 390px !important;
     }
 }
 
 @media only screen and (min-width: 821px) and (max-width: 860px) {
-    #applicationsPage .card {
+    #applicationsPage .inflatable {
         min-height: 395px !important;
     }
 }
 
 @media only screen and (min-width: 861px) and (max-width: 1150px) {
-    #applicationsPage .card {
+    #applicationsPage .inflatable {
         min-height: 400px !important;
     }
 }
 
 @media only screen and (min-width: 1150px) and (max-width: 1549px) {
-    #applicationsPage .card {
+    #applicationsPage .inflatable {
         min-height: 410px !important;
     }
 }
 
 @media only screen and (min-width: 1550px) and (max-width: 1920px) {
-    #applicationsPage .card {
+    #applicationsPage .inflatable {
         min-height: 420px !important;
     }
 }
 
 @media only screen and (min-width: 1921px) {
-    #applicationsPage .card {
+    #applicationsPage .inflatable {
         min-height: 430px !important;
     }
 }
