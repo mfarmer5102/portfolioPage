@@ -76,11 +76,11 @@ $(document).on("click", "#toggleTechnologiesButton", function () {
 ///////////// QUICK LINKS /////////////////////////////////////////////////
 
 $(document).on("click", "#homeQuickLink", function () {
-    window.location.replace('https://www.appsbymatthew.com')
+    window.location.replace('index.html')
 });
 
 $(document).on("click", "#applicationsQuickLink", function () {
-    window.location.replace('https://www.appsbymatthew.com/applications.html')
+    window.location.replace('applications.html')
 });
 
 $(document).on("click", "#githubQuickLink", function () {
