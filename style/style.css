@@ -3,33 +3,20 @@ html, body {
 }
 
 body {
-    background-image: url('../siteImages/geo.jpg');
+    background-image: url('../siteImages/hallway.jpg');
     background-size: cover;
     background-repeat: repeat;
     background-attachment: fixed;
 }
 
-h3 {
-    color: rgb(40, 68, 110);
-}
-
-.sidenav-trigger {
-    color: rgb(49, 150, 155)
-}
-
 .thin-font {
     font-weight: 200;
-    line-height: 2
+    line-height: 1.7
 }
 
 .pageHeaderText {
     padding: 10px 50px 50px 50px;
     background-color: white
-}
-
-main {
-    padding-top: 20px;
-    padding-bottom: 25px
 }
 
 #introductionPhoto, #photoBG {
@@ -76,6 +63,15 @@ main {
 
 #namePlate {
     color: black
+}
+
+.sea-green {
+    color: rgb(55, 175, 169)
+}
+
+a {
+    color: rgb(55, 175, 169);
+    cursor: pointer;
 }
 
 /* ################################################################## */

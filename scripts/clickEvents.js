@@ -1,4 +1,4 @@
-///////////// APPLICATION NOTIFICATIONS
+///////////// APPLICATION NOTIFICATIONS /////////////////////////////////////////////////
 
 //#10 - LIRI Bot
 $(document).on("click", "#liriBotThumbnail", function () {
@@ -18,4 +18,22 @@ $(document).on("click", "#bamazonThumbnail", function () {
 //Python Financial Reporter
 $(document).on("click", "#pyFinRepThumbnail", function () {
     alert('Unfortunately this application is unavailable to experience as it is a command-line application. You may still view its source code on GitHub along with screenshots and/or a demonstrative recording.')
+});
+
+///////////// MANAGE ABOUT ME CONTENT /////////////////////////////////////////////////
+
+$(document).ready(function () {
+    $("#extraAboutText").hide();
+});
+
+$(document).on("click", "#readMoreAbout", function () {
+    $("#extraAboutText").slideDown();
+    $("#controlAboutSize").empty();
+    $("#controlAboutSize").append(`<a id='readLessAbout' style="cursor: pointer">Read less.</a>`);
+});
+
+$(document).on("click", "#readLessAbout", function () {
+    $("#extraAboutText").slideUp();
+    $("#controlAboutSize").empty()
+    $("#controlAboutSize").append(`<a id='readMoreAbout' style="cursor: pointer">Read more.</a>`);
 });

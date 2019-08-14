@@ -8,11 +8,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Portfolio</title>
 
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
     <!-- Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -20,9 +25,7 @@
     <!-- Custom CSS-->
     <link href='style/animate.css' rel='stylesheet' type="text/css">
     <link href='style/style.css' rel='stylesheet' type="text/css">
-
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href='style/inflation.css' rel='stylesheet' type="text/css">
 
     <!-- Firebase Core JavaScript Link -->
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
@@ -30,53 +33,379 @@
     <!-- Specific Firebase products we want (Database) -->
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 
-    <!-- Moment JS -->
-    <script src='scripts/moment.js'></script>
-
     <!-- Traffic Monitor -->
     <script src='scripts/trafficMonitor.js'></script>
+
+    <!-- Inflation Effect for Cards -->
+    <script src='scripts/inflation.js'></script>
 
 </head>
 
 <body>
-    <div class='row' id='photoBG' style='min-height: 100% !important; margin-bottom: 0px !important'>
-        <div class='col s12 m6'>
-        </div>
-        <div class='col s12 m6' style='padding: 20px'>
-            <div class='card animated fadeInRight' id='introductionText'>
-                <!-- Thumnail for LinkedIn / Non-Visible -->
-                <!-- <img src='siteImages/forLinkedIn.jpg' style="height: 100px; width: 150px"> -->
-                <h2 id='welcomeSign' class='thin-font'>Welcome.</h2>
-                <h5 id='namePlate' class='thin-font'>Meet Matthew Farmer.</h5>
-                <p class='thin-font'>
-                    I'm a web developer with a keen eye for design and a passion for developing applications to solve
-                    real-world problems. In addition to more than a year of experience with programming on both the
-                    front and back end, I possess more than five years of professional experience with creative problem
-                    solving (such as creating departmental knowledge repositories with search capability and
-                    writing code to determine refund amounts for thousands of accounts at a large bank).
-                </p>
-                <p class='thin-font'>
-                    My higher education includes a Bachelor’s Degree in Business Management as well as the (pending)
-                    completion of the UNC Chapel Hill Coding Bootcamp.
-                    Technical skills include HTML/CSS, JavaScript, NodeJS, ReactJS, and database manipulation. Certified
-                    by the American Society of Quality in process improvement, I am highly skilled with process
-                    flowcharting (an invaluable tool in application development). In a collaborative environment, I
-                    enjoy teaching others and sharing my knowledge for the benefit of the team.
-                </p>
-                <br>
-                <div data-seed='Entry Point Button' id='entryPointButton' style="text-align: right">
-                    <a href="skills.html" class="btn-floating btn-large pulse button-subfont"><i
-                            class="material-icons">arrow_forward</i></a>
-                </div>
+    <div>
+        <div class="row" style="margin: 0px !important">
+
+            <!-- Navigation Panel -->
+            <div class='col xl2 l3 m3 hide-on-small-only'
+                style="background: rgb(255, 255, 255); min-height: 100vh; padding: 0px !important; position: relative;">
+                <ul class="section table-of-contents" style="padding: 25px">
+
+                    <!-- Image -->
+                    <div style="text-align: center;">
+                        <div style="height: 120px; width: 120px; margin: auto; background-image: url('siteImages/myphoto.jpg'); background-size: cover; border-radius: 100%"></div>
+                    </div>
+                    <br>
+
+                    <!-- Welcome -->
+                    <h5 class='thin-font' style="color: rgb(255, 0, 142)">Welcome</h5>
+                    <li><a href="#aboutSection" style='color: rgb(0, 0, 0)'>About</a></li>
+
+                    <!-- Applications -->
+                    <h5 class='thin-font' style="color: rgb(255, 0, 142)">Applications</h5>
+                    <li><a href="#applicationsSection" style='color: rgb(0, 0, 0)'>Featured Apps</a></li>
+                    <li><a href="#minorAndNonJSAppsSection" style='color: rgb(0, 0, 0)'>Minor Projects</a></li>
+
+                    <!-- More -->
+                    <h5 class='thin-font' style="color: rgb(255, 0, 142)">More</h5>
+                    <li><a href="#skillsSection" style='color: rgb(0, 0, 0)'>Skills</a></li>
+                    <li><a href="#connectSection" style='color: rgb(0, 0, 0)'>Connect</a></li>
+
+                    <!-- Links -->
+                    <div style="text-align: center; position: absolute; bottom: 20px; left: 0px; width: 100%; background: white">
+                        <a href="applications.html"><i class="fas fa-th fa-2x" style="color: rgb(61, 61, 61); padding: 10px"></i></a>
+                        <a href="https://github.com/cafeamericano"><i class="fab fa-github fa-2x" style="color: rgb(61, 61, 61); padding: 10px"></i></a>
+                    </div>
+
+                </ul>
             </div>
+
+            <!-- Content Box -->
+            <main class='col xl10 l9 m9 s12 animated slideInUp'
+                style="max-height: 100vh; overflow: scroll; padding: 20px 50px !important">
+
+                <!-- About -->
+                <section id='aboutSection' class='card section scrollspy'
+                    style="padding: 25px; margin-bottom: 40px; background-color: rgba(255, 255, 255, 0.8)">
+                    <h3 class="thin-font" style="color: rgb(255, 0, 142);">Welcome.</h3>
+                    <p class='thin-font'>
+                        I'm a web developer with a keen eye for design and a passion for developing applications to
+                        solve real-world problems. In addition to more than a year of experience with programming on
+                        both the front and back end, I possess more than five years of professional experience with
+                        creative
+                        problem solving (such as creating departmental knowledge repositories with search capability and
+                        writing code to determine refund amounts for thousands of accounts at a large bank).
+                    </p>
+                    <p id='extraAboutText' class='thin-font'>
+                        My higher education includes a Bachelor’s Degree in Business Management as well as the (pending)
+                        completion of the UNC Chapel Hill Coding Bootcamp. Technical skills include HTML/CSS,
+                        JavaScript, NodeJS, ReactJS, and database manipulation. Certified by the American Society of
+                        Quality in process improvement, I am highly skilled with process flowcharting (an invaluable
+                        tool in application development). In a collaborative environment, I enjoy teaching others and
+                        sharing my knowledge for the benefit of the team.
+                    </p>
+                    <div id='controlAboutSize'>
+                        <a id='readMoreAbout' style="cursor: pointer">Read more.</a>
+                    </div>
+                </section>
+
+                <!-- Applications -->
+                <section id='applicationsSection' class='card section scrollspy'
+                    style="padding: 25px; margin-bottom: 40px; background-color: rgba(255, 255, 255, 0.8)">
+                    <h3 class="thin-font" style="color: rgb(255, 0, 142);">Featured Applications.</h3>
+                    <div class='row'>
+
+                        <!--Start Card-->
+                        <div id='divCareerCoach' class='col l6 m12 s12'>
+                            <div class="card inflatable deflated">
+                                <a data-seed="App: Career Coach, Thumbnail" href="https://careercoach.herokuapp.com/"
+                                    id='careerCoachThumbnail'>
+                                    <div class="card-image waves-effect waves-block waves-light">
+                                        <img src="appImages/careerCoach.png">
+                                    </div>
+                                </a>
+                                <div class="card-content">
+                                    <span data-seed="App: Career Coach, Arrow"
+                                        class="card-title grey-text text-darken-4">Career
+                                        Coach
+                                        <a href='https://careercoach.herokuapp.com/' style="color: black"><i
+                                                class="material-icons right">call_made</i></a></span>
+                                    <small>Uses: NodeJS, MongoDB, Heroku, JavaScript, User Authentication, Express,
+                                        HandlebarsJS, jQuery</small>
+                                    <p><a data-seed="App: Career Coach, Details" class='activator'
+                                            style="cursor: pointer">Details</a> | <a
+                                            data-seed="App: Career Coach, Source Code"
+                                            href="https://github.com/cafeamericano/careerCoach">View Source</a></p>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">Career Coach<i
+                                            class="material-icons right">close</i></span>
+                                    <p>Apply for jobs, track applications, and gain insights with this powerful,
+                                        career-oriented
+                                        application. Demonstrates
+                                        understanding of NodeJS, MongoDB, Express, Handlebars, AJAX, and more.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Card-->
+
+                        <!--Start Card-->
+                        <div id='divStudyHelper' class='col l6 m12 s12'>
+                            <div class="card inflatable deflated">
+                                <a data-seed="App: Study Helper, Thumbnail" href="https://mystudyhelper.herokuapp.com/"
+                                    id='studyHelperThumbnail'>
+                                    <div class="card-image waves-effect waves-block waves-light">
+                                        <img src="appImages/studyhelper.png">
+                                    </div>
+                                </a>
+                                <div class="card-content">
+                                    <span data-seed="App: Study Helper, Arrow"
+                                        class="card-title grey-text text-darken-4">Study
+                                        Helper<a href='https://mystudyhelper.herokuapp.com/' style="color: black"><i
+                                                class="material-icons right">call_made</i></a></span>
+                                    <small>Uses: NodeJS, PostgreSQL, Heroku, JavaScript, User Authentication, Express,
+                                        HandlebarsJS,
+                                        jQuery</small>
+                                    <p><a data-seed="App: Study Helper, Details" class='activator'
+                                            style="cursor: pointer">Details</a> | <a
+                                            data-seed="App: Study Helper, Source Code"
+                                            href="https://github.com/cafeamericano/studyHelper">View Source</a></p>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">Study Helper<i
+                                            class="material-icons right">close</i></span>
+                                    <p>Keep track of your study habits with this elegantly designed application.
+                                        Demonstrates
+                                        understanding of NodeJS, PostgreSQL, Express, Handlebars, AJAX, and more.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Card-->
+
+                        <!--Start Card-->
+                        <div id='divDashboard' class='col l6 m12 s12'>
+                            <div class="card inflatable deflated">
+                                <a data-seed="App: Dashboard, Thumbnail"
+                                    href='https://cafeamericano.github.io/UNC-Project01/index.html'>
+                                    <div class="card-image waves-effect waves-block waves-light">
+                                        <img src="appImages/dashboard.png">
+                                    </div>
+                                </a>
+                                <div class="card-content">
+                                    <span data-seed="App: Dashboard, Arrow"
+                                        class="card-title grey-text text-darken-4">Dashboard
+                                        <a href='https://cafeamericano.github.io/UNC-Project01/index.html'
+                                            style="color: black"><i
+                                                class="material-icons right">call_made</i></a></span>
+                                    <small>Uses: JavaScript, Firebase Realtime Database, User Authentication, API
+                                        Consumption,
+                                        ChartsJS, jQuery</small>
+                                    <p><a data-seed="App: Dashboard, Details" class='activator'
+                                            style="cursor: pointer">Details</a>
+                                        | <a data-seed="App: Dashboard, Source Code"
+                                            href="https://github.com/cafeamericano/UNC-Project01">View Source</a></p>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">Dashboard<i
+                                            class="material-icons right">close</i></span>
+                                    <p>Quickly get information on stocks, weather, news, and more in this one-stop
+                                        application.
+                                        Demonstrates understanding of APIs, jQuery, AJAX, Firebase Authentication, and
+                                        collaborative
+                                        development.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Card-->
+
+                    </div>
+                    <hr>
+                    <section id='minorAndNonJSAppsSection' class='section scrollspy' class='thin-font'>
+                        To view my full gallery of applications, including minor projects and non-JavaScript
+                        applications, click <a href="applications.html">here</a>.
+                    </section>
+                </section>
+
+                <!-- Skills -->
+                <section id='skillsSection' class='card section scrollspy'
+                    style="padding: 25px; margin-bottom: 40px; background-color: rgba(255, 255, 255, 0.8)">
+                    <h3 class="thin-font" style="color: rgb(255, 0, 142);">Skills.</h3>
+                    <div class='row'>
+                        <!--Start Card-->
+                        <div class='col s12 m12'>
+                            <div>
+                                <div class="card-content row">
+                                    <span class="card-title" style="color: rgb(55, 175, 169)">Languages</span>
+                                    <hr>
+                                    <br />
+                                    <div class='col s6 m4 l3'>HTML</div>
+                                    <div class='col s6 m4 l3'>CSS</div>
+                                    <div class='col s6 m4 l3'>JavaScript</div>
+                                    <div class='col s6 m4 l3'>SQL</div>
+                                    <div class='col s6 m4 l3'>JSON</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Card-->
+
+                        <!--Start Card-->
+                        <div class='col s12 m12'>
+                            <div>
+                                <div class="card-content row">
+                                    <span class="card-title" style="color: rgb(55, 175, 169)">Frameworks</span>
+                                    <hr>
+                                    <br />
+                                    <div class='col s6 m4 l3'>jQuery</div>
+                                    <div class='col s6 m4 l3'>Bootstrap</div>
+                                    <div class='col s6 m4 l3'>Materialize</div>
+                                    <div class='col s6 m4 l3'>NodeJS</div>
+                                    <div class='col s6 m4 l3'>ExpressJS</div>
+                                    <div class='col s6 m4 l3'>ReactJS</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Card-->
+
+                        <!--Start Card-->
+                        <div class='col s12 m12'>
+                            <div>
+                                <div class="card-content row">
+                                    <span class="card-title" style="color: rgb(55, 175, 169)">Databases</span>
+                                    <hr>
+                                    <br />
+                                    <div class='col s6 m4 l3'>MySQL</div>
+                                    <div class='col s6 m4 l3'>MongoDB</div>
+                                    <div class='col s6 m4 l3'>PostgreSQL</div>
+                                    <div class='col s6 m4 l3'>Firebase</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Card-->
+
+                        <!--Start Card-->
+                        <div class='col s12 m12'>
+                            <div>
+                                <div class="card-content row">
+                                    <span class="card-title" style="color: rgb(55, 175, 169)">Tools and
+                                        Technologies</span>
+                                    <hr>
+                                    <br />
+                                    <div class='col s6 m4 l3'>Git</div>
+                                    <div class='col s6 m4 l3'>Handlebars</div>
+                                    <div class='col s6 m4 l3'>EJS</div>
+                                    <div class='col s6 m4 l3'>Cookies</div>
+                                    <div class='col s6 m4 l3'>Local Storage</div>
+                                    <div class='col s6 m4 l3'>Session Storage</div>
+                                    <div class='col s6 m4 l3'>Firebase Authentication</div>
+                                    <div class='col s6 m4 l3'>Heroku</div>
+                                    <div class='col s6 m4 l3'>Visual Studio Code</div>
+                                    <div class='col s6 m4 l3'>Atom</div>
+                                    <div class='col s6 m4 l3'>Photoshop</div>
+                                    <div class='col s6 m4 l3'>Lightroom</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Card-->
+                    </div>
+                </section>
+
+                <!-- Connect -->
+                <section id='connectSection' class='card section scrollspy'
+                    style="padding: 25px; margin-bottom: 40px; background-color: rgba(255, 255, 255, 0.8)">
+                    <h3 class="thin-font" style="color: rgb(255, 0, 142);">Connect.</h3>
+                    <div class='row'>
+
+                        <!--Start Card-->
+                        <div data-seed="Connect: Resume Link" class='col s12 m4' style="text-align: center">
+                            <div class="card inflatable deflated" style='cursor: pointer'>
+                                <a href='https://drive.google.com/uc?export=download&id=1DHr2vy2_7HEslNYG1nKBPUP1-ueKaa4l'
+                                    download>
+                                    <div class="card-content activator">
+                                        <span class="card-title" style="color: rgb(55, 175, 169)">Résumé</span>
+                                        <i class="fas fa-file-invoice fa-5x" style="color: rgb(61, 61, 61)"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!--End Card-->
+
+                        <!--Start Card-->
+                        <div data-seed="Connect: GitHub Link" class='col s12 m4' style="text-align: center">
+                            <a href='https://github.com/cafeamericano'>
+                                <div class="card inflatable deflated">
+                                    <div class="card-content row">
+                                        <span class="card-title" style="color: rgb(55, 175, 169)">GitHub</span>
+                                        <i class="fab fa-github fa-5x" style="color: rgb(61, 61, 61)"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!--End Card-->
+
+                        <!--Start Card-->
+                        <div data-seed="Connect: LinkedIn Link" class='col s12 m4' style="text-align: center">
+                            <a href='https://www.linkedin.com/in/matthew-farmer-204930182'>
+                                <div class="card inflatable deflated">
+                                    <div class="card-content row">
+                                        <span class="card-title"
+                                            style='text-align: center; color: rgb(55, 175, 169)'>LinkedIn</span>
+                                        <i class="fab fa-linkedin fa-5x" style="color: rgb(61, 61, 61)"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!--End Card-->
+
+                        <!--Start Card-->
+                        <div data-seed="Connect: Email Link" class='col s12 m4' style="text-align: center">
+                            <div class="card inflatable deflated" style='cursor: pointer'>
+                                <div class="card-content activator">
+                                    <span class="card-title"
+                                        style='text-align: center; color: rgb(55, 175, 169)'>Email</span>
+                                    <i class="fas fa-envelope fa-5x"></i>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4"><i class="material-icons right"
+                                            style="color: rgb(61, 61, 61)">close</i></span>
+                                    <p style="text-align: left">Reach me at:</p>
+                                    <p style="text-align: left"><strong>mfarmer5102@gmail.com</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Card-->
+
+                        <!--Start Card-->
+                        <div data-seed="Connect: Phone Link" class='col s12 m4' style="text-align: center">
+                            <div class="card inflatable deflated" style='cursor: pointer'>
+                                <div class="card-content activator">
+                                    <span class="card-title"
+                                        style='text-align: center; color: rgb(55, 175, 169)'>Phone</span>
+                                    <i class="fas fa-phone fa-5x"></i>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4"><i class="material-icons right"
+                                            style="color: rgb(61, 61, 61)">close</i></span>
+                                    <p style="text-align: left">Reach me at:</p>
+                                    <p style="text-align: left"><strong>252-289-2937</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Card-->
+
+                    </div>
+                </section>
+
+            </main>
+
         </div>
-    </div>
 
-    <!-- Materialize Initialization-->
-    <script>
-        M.AutoInit();
-    </script>
-
+        <!-- Click Events for Non-Deployed Apps-->
+        <script src='scripts/clickEvents.js'></script>
+        <script>
+            //M.AutoInit()
+        </script>
+        <script>
+            //$('.scrollspy').scrollSpy();
+        </script>
 
 </body>
 
