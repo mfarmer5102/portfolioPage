@@ -33,6 +33,9 @@
     <!-- Specific Firebase products we want (Database) -->
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 
+    <!-- MomentJS -->
+    <script src='scripts/moment.js'></script>
+
     <!-- Traffic Monitor -->
     <script src='scripts/trafficMonitor.js'></script>
 
@@ -52,7 +55,9 @@
 
                     <!-- Image -->
                     <div style="text-align: center;">
-                        <div style="height: 120px; width: 120px; margin: auto; background-image: url('siteImages/myphoto.jpg'); background-size: cover; border-radius: 100%"></div>
+                        <div
+                            style="height: 120px; width: 120px; margin: auto; background-image: url('siteImages/myphoto.jpg'); background-size: cover; border-radius: 100%">
+                        </div>
                     </div>
                     <br>
 
@@ -62,7 +67,7 @@
 
                     <!-- Applications -->
                     <h5 class='thin-font' style="color: rgb(255, 0, 142)">Applications</h5>
-                    <li><a href="#applicationsSection" style='color: rgb(0, 0, 0)'>Featured Apps</a></li>
+                    <li><a href="#featuredApplications" style='color: rgb(0, 0, 0)'>Featured Apps</a></li>
                     <li><a href="#minorAndNonJSAppsSection" style='color: rgb(0, 0, 0)'>Minor Projects</a></li>
 
                     <!-- More -->
@@ -71,9 +76,12 @@
                     <li><a href="#connectSection" style='color: rgb(0, 0, 0)'>Connect</a></li>
 
                     <!-- Links -->
-                    <div style="text-align: center; position: absolute; bottom: 20px; left: 0px; width: 100%; background: white">
-                        <a href="applications.html"><i class="fas fa-th fa-2x" style="color: rgb(61, 61, 61); padding: 10px"></i></a>
-                        <a href="https://github.com/cafeamericano"><i class="fab fa-github fa-2x" style="color: rgb(61, 61, 61); padding: 10px"></i></a>
+                    <div
+                        style="text-align: center; position: absolute; bottom: 20px; left: 0px; width: 100%; background: white">
+                        <div id='applicationsQuickLink' style='cursor: pointer; display: inline' href="applications.html"><i class="fas fa-th fa-2x"
+                                style="color: rgb(61, 61, 61); padding: 10px"></i></div>
+                        <div id='githubQuickLink' style='cursor: pointer; display: inline' href="https://github.com/cafeamericano"><i class="fab fa-github fa-2x"
+                                style="color: rgb(61, 61, 61); padding: 10px"></i></div>
                     </div>
 
                 </ul>
@@ -86,9 +94,10 @@
                 <!-- About -->
                 <section id='aboutSection' class='card section scrollspy'
                     style="padding: 25px; margin-bottom: 40px; background-color: rgba(255, 255, 255, 0.8)">
-                    <h3 class="thin-font" style="color: rgb(255, 0, 142);">Welcome.</h3>
+                    <h3 class="thin-font" style="color: rgb(255, 0, 142);">Meet Matthew Farmer.</h3>
                     <p class='thin-font'>
-                        I'm a web developer with a keen eye for design and a passion for developing applications to
+                        I'm a full-stack web developer with a keen eye for design and a passion for developing
+                        applications to
                         solve real-world problems. In addition to more than a year of experience with programming on
                         both the front and back end, I possess more than five years of professional experience with
                         creative
@@ -109,7 +118,7 @@
                 </section>
 
                 <!-- Applications -->
-                <section id='applicationsSection' class='card section scrollspy'
+                <section id='featuredApplications' class='card section scrollspy'
                     style="padding: 25px; margin-bottom: 40px; background-color: rgba(255, 255, 255, 0.8)">
                     <h3 class="thin-font" style="color: rgb(255, 0, 142);">Featured Applications.</h3>
                     <div class='row'>
@@ -217,12 +226,16 @@
                         </div>
                         <!--End Card-->
 
-                    </div>
-                    <hr>
-                    <section id='minorAndNonJSAppsSection' class='section scrollspy' class='thin-font'>
+                </section>
+
+                <!-- Minor Projects -->
+                <section id='minorAndNonJSAppsSection' class='card section scrollspy'
+                    style="padding: 25px; margin-bottom: 40px; background-color: rgba(255, 255, 255, 0.8)">
+                    <h3 class="thin-font" style="color: rgb(255, 0, 142);">Minor Projects.</h3>
+                    <p class='thin-font'>
                         To view my full gallery of applications, including minor projects and non-JavaScript
                         applications, click <a href="applications.html">here</a>.
-                    </section>
+                    </p>
                 </section>
 
                 <!-- Skills -->

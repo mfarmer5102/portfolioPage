@@ -33,6 +33,9 @@
     <!-- Specific Firebase products we want (Database) -->
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 
+    <!-- MomentJS -->
+    <script src='scripts/moment.js'></script>
+
     <!-- Traffic Monitor -->
     <script src='scripts/trafficMonitor.js'></script>
 
@@ -67,8 +70,10 @@
                     <!-- Links -->
                     <div
                         style="text-align: center; position: absolute; bottom: 20px; left: 0px; width: 100%; background: white">
-                        <a href="index.html"><i class="fas fa-home fa-2x" style="color: rgb(61, 61, 61); padding: 10px"></i></a>
-                        <a href="https://github.com/cafeamericano"><i class="fab fa-github fa-2x" style="color: rgb(61, 61, 61); padding: 10px"></i></a>
+                        <div id='homeQuickLink' style='cursor: pointer; display: inline' href="index.html"><i class="fas fa-home fa-2x"
+                                style="color: rgb(61, 61, 61); padding: 10px"></i></div>
+                        <div id='githubQuickLink' style='cursor: pointer; display: inline' href="https://github.com/cafeamericano"><i class="fab fa-github fa-2x"
+                                style="color: rgb(61, 61, 61); padding: 10px"></i></div>
                     </div>
 
                 </ul>

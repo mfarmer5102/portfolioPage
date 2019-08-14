@@ -37,3 +37,17 @@ $(document).on("click", "#readLessAbout", function () {
     $("#controlAboutSize").empty()
     $("#controlAboutSize").append(`<a id='readMoreAbout' style="cursor: pointer">Read more.</a>`);
 });
+
+///////////// QUICK LINKS /////////////////////////////////////////////////
+
+$(document).on("click", "#homeQuickLink", function () {
+    window.location.replace('https://www.appsbymatthew.com')
+});
+
+$(document).on("click", "#applicationsQuickLink", function () {
+    window.location.replace('https://www.appsbymatthew.com/applications.html')
+});
+
+$(document).on("click", "#githubQuickLink", function () {
+    window.location.replace('https://github.com/cafeamericano')
+});

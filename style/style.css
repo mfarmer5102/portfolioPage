@@ -14,27 +14,6 @@ body {
     line-height: 1.7
 }
 
-.pageHeaderText {
-    padding: 10px 50px 50px 50px;
-    background-color: white
-}
-
-#introductionPhoto, #photoBG {
-    background-image: url('../siteImages/hallway.jpg');
-    background-size: cover;
-    background-repeat: none;
-    background-attachment: fixed;
-}
-
-#introductionText {
-    padding: 35px;
-}
-
-.pageHeaderText {
-    background-color: rgb(40, 68, 110);
-    color: white
-}
-
 .card-title {
     color: rgb(255, 0, 142)
 }
@@ -43,35 +22,14 @@ body {
     color: rgb(49, 150, 155)
 }
 
-#applicationsPage h3 {
-    color: rgb(255, 0, 142);
-    padding: 15px
-}
-
-#welcomeSign {
-    color: rgb(255, 0, 142)
-}
-
-#connectContainer i {
-    margin-top: 15px;
-    color: rgb(31, 31, 31)
-}
-
-#connectContainer .card-content {
-    text-align: center;
-}
-
-#namePlate {
-    color: black
-}
-
-.sea-green {
-    color: rgb(55, 175, 169)
-}
-
 a {
     color: rgb(55, 175, 169);
     cursor: pointer;
+}
+
+/* Give space to the Details and View Source links on each card */
+p {
+    padding-top: 20px
 }
 
 /* ################################################################## */
