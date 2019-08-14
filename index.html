@@ -78,9 +78,11 @@
                     <!-- Links -->
                     <div
                         style="text-align: center; position: absolute; bottom: 20px; left: 0px; width: 100%; background: white">
-                        <div id='applicationsQuickLink' style='cursor: pointer; display: inline' href="applications.html"><i class="fas fa-th fa-2x"
+                        <div id='applicationsQuickLink' style='cursor: pointer; display: inline'
+                            href="applications.html"><i class="fas fa-th fa-2x"
                                 style="color: rgb(61, 61, 61); padding: 10px"></i></div>
-                        <div id='githubQuickLink' style='cursor: pointer; display: inline' href="https://github.com/cafeamericano"><i class="fab fa-github fa-2x"
+                        <div id='githubQuickLink' style='cursor: pointer; display: inline'
+                            href="https://github.com/cafeamericano"><i class="fab fa-github fa-2x"
                                 style="color: rgb(61, 61, 61); padding: 10px"></i></div>
                     </div>
 
@@ -88,7 +90,8 @@
             </div>
 
             <!-- Content Box -->
-            <main class='col xl10 l9 m9 s12 animated zoomIn' style="max-height: 100vh; overflow: scroll; padding: 20px 50px !important">
+            <main class='col xl10 l9 m9 s12 animated zoomIn'
+                style="max-height: 100vh; overflow: scroll; padding: 20px 50px !important">
 
                 <!-- About -->
                 <section id='aboutSection' class='card section scrollspy'
@@ -246,14 +249,18 @@
                         <div class='col s12 m12'>
                             <div>
                                 <div class="card-content row">
-                                    <span class="card-title" style="color: rgb(55, 175, 169)">Languages</span>
+                                    <span class="card-title" style="color: rgb(55, 175, 169)">Languages <i
+                                        id='toggleLanguagesButton' style='padding-left: 10px; cursor: pointer'
+                                        class="fas fa-angle-down"></i> </span>
                                     <hr>
-                                    <br />
-                                    <div class='col s6 m4 l3'>HTML</div>
-                                    <div class='col s6 m4 l3'>CSS</div>
-                                    <div class='col s6 m4 l3'>JavaScript</div>
-                                    <div class='col s6 m4 l3'>SQL</div>
-                                    <div class='col s6 m4 l3'>JSON</div>
+                                    <div id='languagesExpandable'>
+                                        <br />
+                                        <div class='col s6 m4 l3'>HTML</div>
+                                        <div class='col s6 m4 l3'>CSS</div>
+                                        <div class='col s6 m4 l3'>JavaScript</div>
+                                        <div class='col s6 m4 l3'>SQL</div>
+                                        <div class='col s6 m4 l3'>JSON</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -263,15 +270,19 @@
                         <div class='col s12 m12'>
                             <div>
                                 <div class="card-content row">
-                                    <span class="card-title" style="color: rgb(55, 175, 169)">Frameworks</span>
+                                    <span class="card-title" style="color: rgb(55, 175, 169)">Frameworks <i
+                                            id='toggleFrameworksButton' style='padding-left: 10px; cursor: pointer'
+                                            class="fas fa-angle-up"></i></span>
                                     <hr>
-                                    <br />
-                                    <div class='col s6 m4 l3'>jQuery</div>
-                                    <div class='col s6 m4 l3'>Bootstrap</div>
-                                    <div class='col s6 m4 l3'>Materialize</div>
-                                    <div class='col s6 m4 l3'>NodeJS</div>
-                                    <div class='col s6 m4 l3'>ExpressJS</div>
-                                    <div class='col s6 m4 l3'>ReactJS</div>
+                                    <div id='frameworksExpandable'>
+                                        <br />
+                                        <div class='col s6 m4 l3'>NodeJS</div>
+                                        <div class='col s6 m4 l3'>ExpressJS</div>
+                                        <div class='col s6 m4 l3'>jQuery</div>
+                                        <div class='col s6 m4 l3'>Bootstrap</div>
+                                        <div class='col s6 m4 l3'>Materialize</div>
+                                        <div class='col s6 m4 l3'>ReactJS</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -281,13 +292,17 @@
                         <div class='col s12 m12'>
                             <div>
                                 <div class="card-content row">
-                                    <span class="card-title" style="color: rgb(55, 175, 169)">Databases</span>
+                                    <span class="card-title" style="color: rgb(55, 175, 169)">Databases <i
+                                            id='toggleDatabasesButton' style='padding-left: 10px; cursor: pointer'
+                                            class="fas fa-angle-up"></i></span>
                                     <hr>
-                                    <br />
-                                    <div class='col s6 m4 l3'>MySQL</div>
-                                    <div class='col s6 m4 l3'>MongoDB</div>
-                                    <div class='col s6 m4 l3'>PostgreSQL</div>
-                                    <div class='col s6 m4 l3'>Firebase</div>
+                                    <div id='databasesExpandable'>
+                                        <br />
+                                        <div class='col s6 m4 l3'>MySQL</div>
+                                        <div class='col s6 m4 l3'>MongoDB</div>
+                                        <div class='col s6 m4 l3'>PostgreSQL</div>
+                                        <div class='col s6 m4 l3'>Firebase</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -297,22 +312,25 @@
                         <div class='col s12 m12'>
                             <div>
                                 <div class="card-content row">
-                                    <span class="card-title" style="color: rgb(55, 175, 169)">Tools and
-                                        Technologies</span>
+                                    <span class="card-title" style="color: rgb(55, 175, 169)">Tools and Technologies <i
+                                            id='toggleTechnologiesButton' style='padding-left: 10px; cursor: pointer'
+                                            class="fas fa-angle-up"></i></span>
                                     <hr>
-                                    <br />
-                                    <div class='col s6 m4 l3'>Git</div>
-                                    <div class='col s6 m4 l3'>Handlebars</div>
-                                    <div class='col s6 m4 l3'>EJS</div>
-                                    <div class='col s6 m4 l3'>Cookies</div>
-                                    <div class='col s6 m4 l3'>Local Storage</div>
-                                    <div class='col s6 m4 l3'>Session Storage</div>
-                                    <div class='col s6 m4 l3'>Firebase Authentication</div>
-                                    <div class='col s6 m4 l3'>Heroku</div>
-                                    <div class='col s6 m4 l3'>Visual Studio Code</div>
-                                    <div class='col s6 m4 l3'>Atom</div>
-                                    <div class='col s6 m4 l3'>Photoshop</div>
-                                    <div class='col s6 m4 l3'>Lightroom</div>
+                                    <div id='technologiesExpandable'>
+                                        <br />
+                                        <div class='col s6 m4 l3'>Git</div>
+                                        <div class='col s6 m4 l3'>Handlebars</div>
+                                        <div class='col s6 m4 l3'>EJS</div>
+                                        <div class='col s6 m4 l3'>Cookies</div>
+                                        <div class='col s6 m4 l3'>Local Storage</div>
+                                        <div class='col s6 m4 l3'>Session Storage</div>
+                                        <div class='col s6 m4 l3'>Firebase Authentication</div>
+                                        <div class='col s6 m4 l3'>Heroku</div>
+                                        <div class='col s6 m4 l3'>Visual Studio Code</div>
+                                        <div class='col s6 m4 l3'>Atom</div>
+                                        <div class='col s6 m4 l3'>Photoshop</div>
+                                        <div class='col s6 m4 l3'>Lightroom</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

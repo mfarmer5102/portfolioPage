@@ -38,6 +38,41 @@ $(document).on("click", "#readLessAbout", function () {
     $("#controlAboutSize").append(`<a id='readMoreAbout' style="cursor: pointer">Read more.</a>`);
 });
 
+///////////// MANAGE SKILLS CONTENT /////////////////////////////////////////////////
+
+$(document).on("click", ".fa-angle-up", function () {
+    $(this).removeClass('fa-angle-up')
+    $(this).addClass('fa-angle-down')
+});
+
+$(document).on("click", ".fa-angle-down", function () {
+    $(this).removeClass('fa-angle-down')
+    $(this).addClass('fa-angle-up')
+});
+
+$(document).ready(function () {
+    $("#languagesExpandable").show();
+    $("#frameworksExpandable").hide();
+    $("#databasesExpandable").hide();
+    $("#technologiesExpandable").hide();
+});
+
+$(document).on("click", "#toggleLanguagesButton", function () {
+    $("#languagesExpandable").slideToggle();
+});
+
+$(document).on("click", "#toggleFrameworksButton", function () {
+    $("#frameworksExpandable").slideToggle();
+});
+
+$(document).on("click", "#toggleDatabasesButton", function () {
+    $("#databasesExpandable").slideToggle();
+});
+
+$(document).on("click", "#toggleTechnologiesButton", function () {
+    $("#technologiesExpandable").slideToggle();
+});
+
 ///////////// QUICK LINKS /////////////////////////////////////////////////
 
 $(document).on("click", "#homeQuickLink", function () {
