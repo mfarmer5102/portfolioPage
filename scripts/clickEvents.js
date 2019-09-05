@@ -25,6 +25,12 @@ $(document).on("click", "#javaMagicEightBallThumbnail", function () {
     alert('Unfortunately this application is unavailable to experience as it is a command-line application. You may still view its source code on GitHub along with screenshots and/or a demonstrative recording.')
 });
 
+//C++ BMI Calculator
+$(document).on("click", "#cppBMICalculatorThumbnail", function () {
+    alert('Unfortunately this application is unavailable to experience as it is a command-line application. You may still view its source code on GitHub along with screenshots and/or a demonstrative recording.')
+});
+
+
 ///////////// MANAGE ABOUT ME CONTENT /////////////////////////////////////////////////
 
 $(document).ready(function () {
