@@ -1,9 +1,0 @@
-.inflated {
-    transform: scale(1.06);
-    transition: transform 250ms ease-in-out;
-}
-
-.deflated {
-    transform: scale(1.0);
-    transition: transform 250ms ease-in-out;
-}
