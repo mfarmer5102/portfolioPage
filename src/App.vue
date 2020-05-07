@@ -8,7 +8,7 @@
         <div class="height-inherit text-left frosted-bg p-3 animated slideInLeft" style="width: 250px">
             <br/><br/>
             <div
-                style="height: 120px; width: 120px; margin: auto; background-image: url('https://raw.githubusercontent.com/cafeamericano/portfoliopage/master/siteImages/myphoto.jpg'); background-size: cover; border-radius: 100%">
+                style="height: 120px; width: 120px; margin: auto; background-image: url('myphoto.jpg'); background-size: cover; border-radius: 100%">
             </div>
             <br/><br/>
             <div>
