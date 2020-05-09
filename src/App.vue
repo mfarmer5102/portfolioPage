@@ -5,7 +5,17 @@
       <div class="row height-inherit">
 
         <!-- Navbar -->
-        <div class="height-inherit text-left frosted-bg p-3 animated slideInLeft" style="width: 250px">
+        <div 
+            class="
+                height-inherit 
+                text-left 
+                frosted-bg 
+                p-3 
+                animated 
+                slideInLeft
+                hideOnMobile
+            " 
+            style="width: 250px">
             <br/><br/>
             <div
                 :style="`height: 120px; width: 120px; margin: auto; background-image: url(${profilePicture}); background-size: cover; border-radius: 100%`">
