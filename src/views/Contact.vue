@@ -24,13 +24,6 @@
                     />
 
                     <ContactCard 
-                        :title='"Resume"'
-                        :body='"Download a virtual copy of my resume."'
-                        :linkRef='"https://drive.google.com/uc?export=download&id=1HOcFhOlveROqNYVoJIyTxzg6UWnjzxaY"'
-                        :linkIcon='"fas fa-file-download"'
-                    />
-
-                    <ContactCard 
                         :title='"Email"'
                         :body='"Email me directly at mfarmer5102@gmail.com"'
                     />
