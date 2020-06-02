@@ -72,7 +72,7 @@ export default {
             fetch("https://central-api-flask-cm6ud432ka-uc.a.run.app/AppGalleryLite/api/keywords").then(function (response) {
                 return response.json();
             }).then(function (result) {
-                self.allKeywords = result.filter(item => item.showOnPortfolio == true);
+                self.allKeywords = result.filter(item => item.showonportfolio || item.showOnPortfolio);
                 // self.componentKey +=1;
                 self.keywordsLoaded = true;
             });

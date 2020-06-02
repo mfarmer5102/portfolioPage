@@ -24,13 +24,13 @@
             <div>
                 <router-link :to="{name:'Welcome'}" class="seagreen">Welcome</router-link>
                 <hr/>
-                <router-link :to="{name:'Applications'}" class="seagreen">Applications</router-link>
+                <a href="https://cafeamericano.github.io/appGalleryLite/" target="_blank" class="seagreen">Interactive Gallery <i class="fas fa-angle-right"></i></a>
+                <!-- <router-link :to="{name:'Applications'}" class="seagreen">Applications</router-link> -->
                 <hr/>
                 <router-link :to="{name:'Skills'}" class="seagreen">Skills</router-link>
                 <hr/>
                 <router-link :to="{name:'Contact'}" class="seagreen">Contact</router-link>
                 <hr/>
-                <a href="https://cafeamericano.github.io/appGalleryLite/" target="_blank" class="seagreen">Interactive Gallery <i class="fas fa-angle-right"></i></a>
             </div>
         </div>
 
